@@ -4,6 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def build(output):
  output=Path(output);output.mkdir(parents=True,exist_ok=True)
+ if subprocess.run(['git','status','--porcelain','--untracked-files=no'],cwd=ROOT,capture_output=True,text=True,check=True).stdout.strip():raise ValueError('Release requires a clean committed tree')
  files=subprocess.run(['git','ls-files','-z'],cwd=ROOT,capture_output=True,check=True).stdout.decode('utf-8').split('\0');files=sorted(n for n in files if n)
  if not files:raise ValueError('No tracked public files')
  spec=importlib.util.spec_from_file_location('audit',ROOT/'tools/public_audit.py');audit=importlib.util.module_from_spec(spec);spec.loader.exec_module(audit);audit.audit()
@@ -11,7 +12,7 @@ def build(output):
  if dest.exists():raise ValueError('Refuse to overwrite existing release archive')
  with zipfile.ZipFile(dest,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
   for name in files:
-   p=ROOT/name;audit.inspect(name,p.read_bytes());info=zipfile.ZipInfo(name,date_time=(1980,1,1,0,0,0));info.external_attr=0o100644<<16;info.compress_type=zipfile.ZIP_DEFLATED;z.writestr(info,p.read_bytes())
+   data=subprocess.run(['git','show','HEAD:'+name],cwd=ROOT,capture_output=True,check=True).stdout;audit.inspect(name,data);info=zipfile.ZipInfo(name,date_time=(1980,1,1,0,0,0));info.external_attr=0o100644<<16;info.compress_type=zipfile.ZIP_DEFLATED;z.writestr(info,data)
  with tempfile.TemporaryDirectory(prefix='iv4-release-check-') as temp:
   folder=Path(temp)/'package';folder.mkdir()
   with zipfile.ZipFile(dest) as z:
