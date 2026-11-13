@@ -1,0 +1,165 @@
+{
+  "checked_on": "2026-11-13",
+  "status": "PASS",
+  "items": [
+    {
+      "claim": "All 89 command request forms, family identity and detail page match existing extracted source table",
+      "classification": "DOCUMENTED",
+      "checks": 89,
+      "status": "PASS"
+    },
+    {
+      "claim": "CSR detail width",
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 437,
+      "status": "PASS",
+      "method": "Source text reviewed; token relation check and public synthesis review, not HW"
+    },
+    {
+      "claim": "CSR detail width differs",
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 513,
+      "status": "PASS",
+      "method": "Source text reviewed; token relation check and public synthesis review, not HW"
+    },
+    {
+      "claim": "T1 immediate, completion distinct",
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 506,
+      "status": "PASS",
+      "method": "Source text reviewed; token relation check and public synthesis review, not HW"
+    },
+    {
+      "claim": "OF04 constrained mode",
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 511,
+      "status": "PASS",
+      "method": "Source text reviewed; token relation check and public synthesis review, not HW"
+    },
+    {
+      "claim": "RT counter and tool format",
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 517,
+      "status": "PASS",
+      "method": "Source text reviewed; token relation check and public synthesis review, not HW"
+    },
+    {
+      "claim": "BR binary image and length",
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 515,
+      "status": "PASS",
+      "method": "Source text reviewed; token relation check and public synthesis review, not HW"
+    },
+    {
+      "claim": "OPC UA limits",
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 475,
+      "status": "PASS",
+      "method": "Source text reviewed; token relation check and public synthesis review, not HW"
+    },
+    {
+      "claim": "Kepware exact listed incompatibility",
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 475,
+      "status": "PASS",
+      "method": "Source text reviewed; token relation check and public synthesis review, not HW"
+    },
+    {
+      "claim": "MQTT 3.1.1 clean session",
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 493,
+      "status": "PASS",
+      "method": "Source text reviewed; token relation check and public synthesis review, not HW"
+    },
+    {
+      "claim": "MQTT action incoming QoS1",
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 498,
+      "status": "PASS",
+      "method": "Source text reviewed; token relation check and public synthesis review, not HW"
+    },
+    {
+      "claim": "OPC UA duplicate node17006",
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 491,
+      "status": "PASS",
+      "method": "Source text reviewed; token relation check and public synthesis review, not HW"
+    },
+    {
+      "claim": "EIP instances/RPI/owner",
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 335,
+      "status": "PASS",
+      "method": "Source text reviewed; token relation check and public synthesis review, not HW"
+    },
+    {
+      "claim": "PROFINET local status words",
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 403,
+      "status": "PASS",
+      "method": "Source text reviewed; token relation check and public synthesis review, not HW"
+    },
+    {
+      "claim": "Warning 62 fieldnetwork overrun",
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 521,
+      "status": "PASS",
+      "method": "Source text reviewed; token relation check and public synthesis review, not HW"
+    },
+    {
+      "claim": "FTP warning distinctions",
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 522,
+      "status": "PASS",
+      "method": "Source text reviewed; token relation check and public synthesis review, not HW"
+    },
+    {
+      "claim": "GSDML identity and module IDs",
+      "source_sha256": "03f7e641ef8e297d65d65496440e2eb2d3cf8ef5eaf4759eab11e7e16ea1a462",
+      "source_member": "FB_Keyence_IV4H/AdditionalFiles/GSD/gsdml-v2.42-keyence-iv4-20240516.xml",
+      "status": "PASS",
+      "classification": "DESCRIPTOR_ONLY"
+    },
+    {
+      "claim": "GSDML identity and module IDs",
+      "source_sha256": "1c389547743ec19edebcf4417db22766649bd1cb9bed81a8d9f6ea3c3cea6f65",
+      "source_member": "FB_Keyence_IV4H/AdditionalFiles/GSD/gsdml-v2.44-keyence-iv4-20251111.xml",
+      "status": "PASS",
+      "classification": "DESCRIPTOR_ONLY"
+    },
+    {
+      "claim": "GSDML identity and module IDs",
+      "source_sha256": "1015b749d40ffa7f5116d707d05970be98c1a0f9c60a1cfec822ed5c43f98273",
+      "source_member": "IV4-H_GSDML_20000/GSDML-V2.44-Keyence-IV4-20260203.xml",
+      "status": "PASS",
+      "classification": "DESCRIPTOR_ONLY"
+    },
+    {
+      "claim": "EDS identity VendorCode 367 / ProductCode 4608 / revision 1.1 and five assemblies, eight connections",
+      "classification": "DESCRIPTOR_ONLY",
+      "source_member": "IV4-H_EDS_20000/Keyence_4608_0101.eds",
+      "locator": "[Device]/VendCode, [Device]/ProdCode, [Device]/MajRev, [Device]/MinRev",
+      "status": "PASS",
+      "method": "Selected local raw records compared with public identity summary; no import/HW"
+    }
+  ],
+  "formal_command_rows_checked": 89,
+  "expert_certification": false,
+  "hardware_test": false,
+  "limitations": "Selected numeric/semantic claims and all request spellings verified; not every public sentence or diagram independently expert reviewed."
+}

@@ -1,0 +1,455 @@
+{
+  "schema_version": 1,
+  "capabilities": [
+    {
+      "id": "CAP-IV4-FTP-SFTP",
+      "family": "IV4",
+      "capability": "FTP/SFTP",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "Only the cited model family/document edition; enabled configuration and security must be checked."
+      ],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_pages": [
+        282,
+        295
+      ],
+      "role": "sensor transfer client",
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-EtherNet-IP",
+      "family": "IV4",
+      "capability": "EtherNet/IP",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "Only the cited model family/document edition; enabled configuration and security must be checked."
+      ],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_pages": [
+        296,
+        333
+      ],
+      "role": "cyclic adapter",
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-PROFINET",
+      "family": "IV4",
+      "capability": "PROFINET",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "Only the cited model family/document edition; enabled configuration and security must be checked."
+      ],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_pages": [
+        334,
+        367
+      ],
+      "role": "configured IO device",
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-EtherCAT",
+      "family": "IV4",
+      "capability": "EtherCAT",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "Only the cited model family/document edition; enabled configuration and security must be checked.",
+        "IV4-CU1 or IV4-GCU1 required in cited section."
+      ],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_pages": [
+        368,
+        397
+      ],
+      "role": "communication-unit slave",
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-OPC-UA-server",
+      "family": "IV4",
+      "capability": "OPC UA server",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "Only the cited model family/document edition; enabled configuration and security must be checked."
+      ],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_pages": [
+        398,
+        415
+      ],
+      "role": "sensor is OPC UA server",
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-MQTT-client",
+      "family": "IV4",
+      "capability": "MQTT client",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "Only the cited model family/document edition; enabled configuration and security must be checked."
+      ],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_pages": [
+        416,
+        425
+      ],
+      "role": "sensor is broker client; publishes and subscribes",
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-TCP-IP-non-procedural",
+      "family": "IV4",
+      "capability": "TCP/IP non-procedural",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "Only the cited model family/document edition; enabled configuration and security must be checked."
+      ],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_pages": [
+        426,
+        446
+      ],
+      "role": "sensor server, external active-open client",
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-H-FTP-SFTP",
+      "family": "IV4-H",
+      "capability": "FTP/SFTP",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "Only the cited model family/document edition; enabled configuration and security must be checked."
+      ],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_pages": [
+        314,
+        331
+      ],
+      "role": "sensor transfer client",
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-H-EtherNet-IP",
+      "family": "IV4-H",
+      "capability": "EtherNet/IP",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "Only the cited model family/document edition; enabled configuration and security must be checked."
+      ],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_pages": [
+        332,
+        379
+      ],
+      "role": "cyclic adapter",
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-H-PROFINET",
+      "family": "IV4-H",
+      "capability": "PROFINET",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "Only the cited model family/document edition; enabled configuration and security must be checked."
+      ],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_pages": [
+        380,
+        427
+      ],
+      "role": "configured IO device",
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-H-EtherCAT",
+      "family": "IV4-H",
+      "capability": "EtherCAT",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "Only the cited model family/document edition; enabled configuration and security must be checked.",
+        "IV4-CU1 or IV4-GCU1 required in cited section."
+      ],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_pages": [
+        428,
+        473
+      ],
+      "role": "communication-unit slave",
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-H-OPC-UA-server",
+      "family": "IV4-H",
+      "capability": "OPC UA server",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "Only the cited model family/document edition; enabled configuration and security must be checked."
+      ],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_pages": [
+        474,
+        491
+      ],
+      "role": "sensor is OPC UA server",
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-H-MQTT-client",
+      "family": "IV4-H",
+      "capability": "MQTT client",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "Only the cited model family/document edition; enabled configuration and security must be checked."
+      ],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_pages": [
+        492,
+        501
+      ],
+      "role": "sensor is broker client; publishes and subscribes",
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-H-TCP-IP-non-procedural",
+      "family": "IV4-H",
+      "capability": "TCP/IP non-procedural",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "Only the cited model family/document edition; enabled configuration and security must be checked."
+      ],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_pages": [
+        502,
+        528
+      ],
+      "role": "sensor server, external active-open client",
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-Latest-image-BR",
+      "family": "IV4",
+      "capability": "Latest image BR",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "24-bit BMP and length-aware binary parsing; not realtime stream."
+      ],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_pages": [
+        439,
+        440
+      ],
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-Program-selection-PW",
+      "family": "IV4",
+      "capability": "Program selection PW",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "000–127 wire numbers; Switching method must allow remote selection."
+      ],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_pages": [
+        430
+      ],
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-Status-temperature",
+      "family": "IV4",
+      "capability": "Status/temperature",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "SR/RM/TP and error/statistical commands, not arbitrary device telemetry."
+      ],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_pages": [
+        433,
+        434,
+        439
+      ],
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-H-Latest-image-BR",
+      "family": "IV4-H",
+      "capability": "Latest image BR",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "24-bit BMP and length-aware binary parsing; not realtime stream."
+      ],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_pages": [
+        515,
+        516
+      ],
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-H-Program-selection-PW",
+      "family": "IV4-H",
+      "capability": "Program selection PW",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "000–127 wire numbers; Switching method must allow remote selection."
+      ],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_pages": [
+        506
+      ],
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-H-Status-temperature",
+      "family": "IV4-H",
+      "capability": "Status/temperature",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "SR/RM/TP and error/statistical commands, not arbitrary device telemetry."
+      ],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_pages": [
+        510,
+        516
+      ],
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-UNVERIFIED-Universal-REST-configuration-API",
+      "family": [
+        "IV4",
+        "IV4-H"
+      ],
+      "capability": "Universal REST configuration API",
+      "classification": "UNVERIFIED",
+      "conditions": [
+        "Not established by this skill; request exact official evidence or bounded hardware experiment."
+      ],
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-UNVERIFIED-Arbitrary-remote-full-project-upload",
+      "family": [
+        "IV4",
+        "IV4-H"
+      ],
+      "capability": "Arbitrary remote full project upload",
+      "classification": "UNVERIFIED",
+      "conditions": [
+        "Not established by this skill; request exact official evidence or bounded hardware experiment."
+      ],
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-UNVERIFIED-Guaranteed-per-trigger-image-result-correlation",
+      "family": [
+        "IV4",
+        "IV4-H"
+      ],
+      "capability": "Guaranteed per-trigger image/result correlation",
+      "classification": "UNVERIFIED",
+      "conditions": [
+        "Not established by this skill; request exact official evidence or bounded hardware experiment."
+      ],
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-UNVERIFIED-Hardware-tested-production-connector",
+      "family": [
+        "IV4",
+        "IV4-H"
+      ],
+      "capability": "Hardware-tested production connector",
+      "classification": "UNVERIFIED",
+      "conditions": [
+        "Not established by this skill; request exact official evidence or bounded hardware experiment."
+      ],
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-UNVERIFIED-QR-barcode-reader",
+      "family": [
+        "IV4",
+        "IV4-H"
+      ],
+      "capability": "QR/barcode reader",
+      "classification": "UNVERIFIED",
+      "conditions": [
+        "Not established by this skill; request exact official evidence or bounded hardware experiment."
+      ],
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-H-AI-Target-Extraction",
+      "family": "IV4-H",
+      "capability": "AI Target Extraction",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "IV4-H manual R2.10 / H-specific public video topics. Do not assign to baseline IV4 merely by similarity."
+      ],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_pages": [
+        152,
+        155
+      ],
+      "additional_source": "https://www.keyence.com/support/user/vision/iv4/video/",
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-H-AI-Position-Adjustment",
+      "family": "IV4-H",
+      "capability": "AI Position Adjustment",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "IV4-H manual R2.10 / H-specific public video topics. Do not assign to baseline IV4 merely by similarity."
+      ],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_pages": [
+        150,
+        151
+      ],
+      "additional_source": "https://www.keyence.com/support/user/vision/iv4/video/",
+      "runtime_verified": false
+    },
+    {
+      "id": "CAP-IV4-H-AI-Imaging-II",
+      "family": "IV4-H",
+      "capability": "AI Imaging II",
+      "classification": "DOCUMENTED",
+      "conditions": [
+        "IV4-H manual R2.10 / H-specific public video topics. Do not assign to baseline IV4 merely by similarity."
+      ],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_pages": [
+        94
+      ],
+      "additional_source": "https://www.keyence.com/support/user/vision/iv4/video/",
+      "runtime_verified": false
+    }
+  ]
+}

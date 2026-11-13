@@ -1,0 +1,105 @@
+{
+  "reviewed_on": "2026-11-13",
+  "status": "PASS",
+  "cases": [
+    {
+      "id": "families",
+      "status": "PASS",
+      "basis": "Actual standalone model answer and source-bearing lookup; parent semantic review against requested distinction"
+    },
+    {
+      "id": "inspection",
+      "status": "PASS",
+      "basis": "Actual standalone model answer and source-bearing lookup; parent semantic review against requested distinction"
+    },
+    {
+      "id": "quality",
+      "status": "PASS",
+      "basis": "Actual standalone model answer and source-bearing lookup; parent semantic review against requested distinction"
+    },
+    {
+      "id": "siemens",
+      "status": "PASS",
+      "basis": "Actual standalone model answer and source-bearing lookup; parent semantic review against requested distinction"
+    },
+    {
+      "id": "gsdml",
+      "status": "PASS",
+      "basis": "Actual standalone model answer and source-bearing lookup; parent semantic review against requested distinction"
+    },
+    {
+      "id": "tcp",
+      "status": "PASS",
+      "basis": "Actual standalone model answer and source-bearing lookup; parent semantic review against requested distinction"
+    },
+    {
+      "id": "ack",
+      "status": "PASS",
+      "basis": "Actual standalone model answer and source-bearing lookup; parent semantic review against requested distinction"
+    },
+    {
+      "id": "freshness",
+      "status": "PASS",
+      "basis": "Actual standalone model answer and source-bearing lookup; parent semantic review against requested distinction"
+    },
+    {
+      "id": "busy",
+      "status": "PASS",
+      "basis": "Actual standalone model answer and source-bearing lookup; parent semantic review against requested distinction"
+    },
+    {
+      "id": "diagnostics",
+      "status": "PASS",
+      "basis": "Actual standalone model answer and source-bearing lookup; parent semantic review against requested distinction"
+    },
+    {
+      "id": "image",
+      "status": "PASS",
+      "basis": "Actual standalone model answer and source-bearing lookup; parent semantic review against requested distinction"
+    },
+    {
+      "id": "iot",
+      "status": "PASS",
+      "basis": "Actual standalone model answer and source-bearing lookup; parent semantic review against requested distinction"
+    },
+    {
+      "id": "gpixel",
+      "status": "PASS",
+      "basis": "Actual standalone model answer and source-bearing lookup; parent semantic review against requested distinction"
+    },
+    {
+      "id": "offline",
+      "status": "PASS",
+      "basis": "Actual standalone model answer and source-bearing lookup; parent semantic review against requested distinction"
+    },
+    {
+      "id": "unsupported",
+      "status": "PASS",
+      "basis": "Actual standalone model answer and source-bearing lookup; parent semantic review against requested distinction"
+    },
+    {
+      "id": "source_anomaly",
+      "status": "PASS",
+      "basis": "Actual standalone model answer and source-bearing lookup; parent semantic review against requested distinction"
+    },
+    {
+      "id": "update",
+      "status": "PASS",
+      "basis": "Actual standalone model answer and source-bearing lookup; parent semantic review against requested distinction"
+    },
+    {
+      "id": "functional_delta",
+      "status": "PASS",
+      "basis": "Actual standalone model answer and source-bearing lookup; parent semantic review against requested distinction"
+    }
+  ],
+  "case_count": 18,
+  "independent_forward_agent": true,
+  "private_corpus_used": false,
+  "hardware_test": false,
+  "limits": [
+    "Single bounded run, not a statistical answer-quality benchmark.",
+    "Some broad question answers are brief; actual detailed follow-up functional_delta also executed.",
+    "PDF citations supplied by skill, checked separately in selected source-verification items."
+  ]
+}

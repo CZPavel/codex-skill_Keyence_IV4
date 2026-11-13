@@ -1,0 +1,162 @@
+{
+  "skill_loaded": true,
+  "lookup_commands_executed": [
+    "python scripts/lookup.py --status",
+    "python scripts/lookup.py --command CSR --family IV4-H --max-chars 5000",
+    "python scripts/lookup.py --command PR --max-chars 3000",
+    "python scripts/lookup.py --id S-IV4-H",
+    "python scripts/lookup.py --descriptor DAP5 --limit 3",
+    "python scripts/lookup.py --command CSR --family IV4 --max-chars 2500",
+    "python scripts/lookup.py --command RM --max-chars 2200",
+    "python scripts/lookup.py --command SR --max-chars 2200",
+    "python scripts/lookup.py --command RER --max-chars 2200",
+    "python scripts/lookup.py --descriptor 303 --limit 2",
+    "python scripts/lookup.py --query \"AI Target Extraction\" --limit 5",
+    "python scripts/lookup.py --query \"AI Position Adjustment\" --limit 5",
+    "python scripts/lookup.py --query \"capability\" --limit 5"
+  ],
+  "answers": [
+    {
+      "id": "families",
+      "answer": "IV4 a IV4-H mají samostatné manuály a sady funkcí: IV4 zahrnuje varianty s integrovaným zesilovačem i ultra-compact hlavy s odděleným zesilovačem; funkce H nelze automaticky přenést na IV4. Dokumentace pokrývá IV4 R1.30 a H senzor/panel/Navigator R2.10, přičemž komunikační jednotka H má vlastní R1.30; konkrétní kompatibilitu ověř podle modelu a instalovaných verzí.",
+      "evidence": [
+        "IV4_UserManual_WW_GB_AS_167146.pdf p.10,20,24–31; iv4_82ffe8b0fedc105a",
+        "IV4_UserManual_WW_GB_AS_170071.pdf p.10; iv4_f2b18663143f7e12"
+      ]
+    },
+    {
+      "id": "inspection",
+      "answer": "Pro lesklý díl nejprve stabilizuj mechaniku a porovnej geometrii osvětlení, polarizaci, expozici a případně HDR; ve Standard Sensor Setup zaregistruj reprezentativní OK master. Position Adjustment naváže ROI na stabilní prvek, AI Identify nebo Area ověří přítomnost a Edge/Width vhodnou polohu či geometrii; Total nastav včetně ošetření selhání lokalizace. Otestuj nezávislé OK, chybějící, posunuté a hraniční díly včetně změn lesku, rychlosti a PLC výstupu; účinnost je zatím neověřená.",
+      "evidence": [
+        "IV4_UserManual_WW_GB_AS_167146.pdf p.92,97,100,106,110–111,139,151–153,176–177; iv4_82ffe8b0fedc105a"
+      ]
+    },
+    {
+      "id": "quality",
+      "answer": "Stabilitu ovlivňují osvětlení, odlesky, zaostření, expozice a pohyb, reprezentativnost masteru a OK/NG learning, rozsah hledání, maska i vazba ROI na správnou korekci polohy. Vysoké skóre má význam konkrétního nástroje, nikoli pravděpodobnost správnosti: například Area srovnává extrahovanou plochu s referencí a může překročit 100. Prahy ověř nezávislými vzorky včetně krajních podmínek.",
+      "evidence": [
+        "IV4_UserManual_WW_GB_AS_167146.pdf p.92,97,108–115,136,144–146; iv4_82ffe8b0fedc105a"
+      ]
+    },
+    {
+      "id": "siemens",
+      "answer": "Pro S7-1500 nejprve určete přesný IV4-H, firmware a případnou CU1/GCU1, vyberte odpovídající GSDML a DAP, nastavte v TIA stanici, IP a síť podle connection guide. Moduly vybírejte podle směru a obsahu: Command Control pro PLC→senzor a podle potřeby Device Status Words, Device Result Bits, Position Adjust a Tool Result pro senzor→PLC; v uvedeném H rozložení má Command Control slot 1 a 12 bytů. Ověřte adresy přiřazené v projektu, handshake, diagnostiku a test spojení na konkrétní sestavě.",
+      "evidence": [
+        "IV4_ConnectionGuide_CommunicationManual_WW_GB_AS_169896.pdf",
+        "IV4_UserManual_WW_GB_AS_170071.pdf p.380–384,403; iv4_f2b18663143f7e12"
+      ]
+    },
+    {
+      "id": "gsdml",
+      "answer": "Ne: DAP5 označuje přístupový bod a Module ID 303 je v registru x4 Details Tool Results s ModuleIdentNumber 0x00000304; žádný z těchto údajů není absolutní adresa PLC. DESCRIPTOR_ONLY: vyber přesný soubor a SHA, DAP, povolený slot, modul a submodul a z jejich DataItem/BitDataItem zjisti směr, typ a délku; konečnou adresu přidělí konkrétní PLC projekt. Kompletní mapu ověř v originálním GSDML, který skill nepřibaluje.",
+      "evidence": [
+        "IV4_UserManual_WW_GB_AS_170071.pdf p.380–427; iv4_f2b18663143f7e12",
+        "GSDML V2.44 descriptor DAP5 a Module ID 303, lokální faktický registr"
+      ]
+    },
+    {
+      "id": "tcp",
+      "answer": "DOCUMENTED: čtení aktivního programu je PR[CR], odpověď PR,nnn[CR] s číslem 000–127; CR je 0x0D. CSR je checksum: IV4 uvádí pět číslic, IV4-H v detailu deset, ale jeho souhrnná tabulka uvádí pět a další zdroj má rozpor v rozsahu, takže délku H nelze bezpečně uzavřít bez ověření.",
+      "evidence": [
+        "IV4_UserManual_WW_GB_AS_167146.pdf p.429–430,437; iv4_82ffe8b0fedc105a",
+        "IV4_UserManual_WW_GB_AS_170071.pdf p.505–506,513; iv4_f2b18663143f7e12"
+      ]
+    },
+    {
+      "id": "ack",
+      "answer": "Ne, T1[CR] je okamžité potvrzení příkazu, nikoli nový OK výsledek. Následně je třeba podle zvoleného režimu ověřit dokončení a čerstvý platný RT, případně použít T2, který vrací výsledek po inspekci; po změně programu či před první inspekcí může RT vrátit chybu 03.",
+      "evidence": [
+        "IV4_UserManual_WW_GB_AS_167146.pdf p.430,444–445; iv4_82ffe8b0fedc105a",
+        "IV4_UserManual_WW_GB_AS_170071.pdf p.506,525–526; iv4_f2b18663143f7e12"
+      ]
+    },
+    {
+      "id": "freshness",
+      "answer": "Stejný RT counter po reconnect neprokazuje ani nový díl, ani totožnost dílu; poslední výsledek může být starý a výpadek mohl skrýt cykly. Čítač přechází modulo 32768 z 32767 na 0, což samo o sobě není chyba; návrh přidá host session_id, cycle_id, program a explicitní validitu a po připojení čeká na prokazatelně nový cyklus.",
+      "evidence": [
+        "IV4_UserManual_WW_GB_AS_167146.pdf p.441–442; iv4_82ffe8b0fedc105a",
+        "IV4_UserManual_WW_GB_AS_170071.pdf p.517–518; iv4_f2b18663143f7e12"
+      ]
+    },
+    {
+      "id": "busy",
+      "answer": "Při fyzickém Preliminary Capture/2-image Buffer PLC přijímá nový výsledek synchronně se Strobe a další externí trigger posílá jen při Trigger Ready ON. BUSY může při krátkém intervalu zůstat trvale ON; při Ready OFF je trigger ignorován a vzniká trigger error. Ověř polaritu, délku Strobe a zachycení PLC; fieldbus má vlastní handshake.",
+      "evidence": [
+        "IV4_UserManual_WW_GB_AS_167146.pdf p.461,463; iv4_82ffe8b0fedc105a",
+        "IV4_UserManual_WW_GB_AS_170071.pdf p.542–545; iv4_f2b18663143f7e12"
+      ]
+    },
+    {
+      "id": "diagnostics",
+      "answer": "Read-only RM vrací 0 Program nebo 1 Run, SR obsahuje mimo jiné BUSY, Trigger Ready, Warning a Error a RER vrací tříciferný kód zařízení, 000 bez chyby. ER,T2,03 je protokolové odmítnutí kvůli nevhodnému stavu či nastavení, nikoli samotný kód zařízení: porovnej Run/Program, BUSY/Error, OE a podmínky T2 bez resetu. Příčinu bez konkrétního stavu nelze určit.",
+      "evidence": [
+        "IV4_UserManual_WW_GB_AS_167146.pdf p.426,433–434,444–445; iv4_82ffe8b0fedc105a",
+        "IV4_UserManual_WW_GB_AS_170071.pdf p.502,510,525–526; iv4_f2b18663143f7e12"
+      ]
+    },
+    {
+      "id": "image",
+      "answer": "Ano, při povoleném non-procedural TCP lze pomocí BR získat poslední BMP bez trvale běžícího Navigatoru; FTP/SFTP a MQTT obraz jsou jiné cesty s vlastními podmínkami. Binární payload neděl podle CR, protože ho může obsahovat: po textové hlavičce použij parser respektující délku a ověř konkrétní framing i vazbu obrazu na cyklus. Není to záruka streamu ani plného vzdáleného nastavení.",
+      "evidence": [
+        "IV4_UserManual_WW_GB_AS_167146.pdf p.439–440; iv4_82ffe8b0fedc105a",
+        "IV4_UserManual_WW_GB_AS_170071.pdf p.515–516; iv4_f2b18663143f7e12"
+      ]
+    },
+    {
+      "id": "iot",
+      "answer": "IV4-H poskytuje OPC UA server s adresovým prostorem a metodami, zatímco MQTT je klient připojující se k externímu brokeru; MQTT 3.1.1 má Clean Session pevně True, takže neslibuje persistentní replay při odpojení. Manuál uvádí ID 17006 pro dvě metody, proto nevymýšlej 17007: na cílovém zařízení proveď Browse namespace URI a metadat metod a zaznamenej model a firmware.",
+      "evidence": [
+        "IV4_UserManual_WW_GB_AS_170071.pdf p.486–491,493,496–499; iv4_f2b18663143f7e12"
+      ]
+    },
+    {
+      "id": "gpixel",
+      "answer": "INFERRED návrh konektoru: capability profile dle modelu a firmware pro identitu, stav, výsledky, diagnostiku, obraz a případně autorizovanou volbu programu; jednotlivé transporty mají vlastní podmínky a sériovou frontu požadavků. Obal výsledku má nést host session_id/cycle_id, identitu, aktuální i výsledkový program, counter, časy, validitu, surovou odpověď a případnou referenci obrazu; reconnect označí data jako stale a nevyvolává automatický zápis. Jde o návrh, nikoli existující server nebo prokázané párování dílů.",
+      "evidence": [
+        "IV4_UserManual_WW_GB_AS_167146.pdf p.281–446; iv4_82ffe8b0fedc105a",
+        "IV4_UserManual_WW_GB_AS_170071.pdf p.313–528; iv4_f2b18663143f7e12"
+      ]
+    },
+    {
+      "id": "offline",
+      "answer": "Samostatný skill obsahuje vlastní reference, metadata zdrojů a registry příkazů a deskriptorů, ale nepřibaluje původní PDF ani úplné OEM XML; FAST údaje nejsou expert ani HW validace. Hotový privátní archiv lze připojit read-only pomocí python scripts/lookup.py --corpus <IV4_KB_OUTPUT> --id iv4_f2b18663143f7e12:p0505 --neighbors 1 --evidence --limit 3 nebo proměnnou KEYENCE_IV4_KB. Archiv jsme nyní nepřipojili ani nečetli.",
+      "evidence": [
+        "IV4_UserManual_WW_GB_AS_170071.pdf p.505; iv4_f2b18663143f7e12",
+        "skill references/source-map.md: standalone a rozšířený režim"
+      ]
+    },
+    {
+      "id": "unsupported",
+      "answer": "GET /api/status je UNVERIFIED: Web monitor sám nedokládá REST API ani tento endpoint, proto nelze napsat doložený curl. AI OCR čte text a z dostupných zdrojů nelze potvrdit QR reader pro požadovaný model; ověř přesný model, firmware a oficiální specifikaci.",
+      "evidence": [
+        "IV4_UserManual_WW_GB_AS_167146.pdf p.120–123; iv4_82ffe8b0fedc105a",
+        "https://www.keyence.com/products/sensor/vision-sensor/iv4/specs/"
+      ]
+    },
+    {
+      "id": "source_anomaly",
+      "answer": "Ne: u ITR se souhrnná tabulka a detail liší čárkou před CR a u MC se zápis MC[R] rozchází s detailním MC+CR, takže konkrétní wire tvar vyžaduje ověření zdroje a cílového zařízení. U OPC UA jsou dvě metody uvedeny pod 17006; 17007 nelze odvodit, použij Browse a ověř metadata.",
+      "evidence": [
+        "IV4_UserManual_WW_GB_AS_170071.pdf p.491,505–528; iv4_f2b18663143f7e12"
+      ]
+    },
+    {
+      "id": "update",
+      "answer": "Skill uvádí dle oficiálních release detailů IV4 sensor/CU1/GCU1 R1.30.02 (2024-12-10), IV4-H sensor R2.10.01 a Navigator R2.10.01 (oba 2026-09-01); záznam byl kontrolován 2026-11-13, aktuálnost je třeba znovu ověřit. Firmware update podle těchto postupů smaže nastavení a image history, zatímco spuštění stejné verze Navigator updateru může Navigator odinstalovat; nejprve připrav odpovídající zálohu a ověř obnovu.",
+      "evidence": [
+        "https://www.keyence.com/popup/downloads/software/description/iv4_g120/",
+        "https://www.keyence.com/popup/downloads/software/description/iv4-h_g120/",
+        "https://www.keyence.com/popup/downloads/software/description/iv-h1sn/"
+      ]
+    },
+    {
+      "id": "functional_delta",
+      "answer": "IV4 Standard nabízí například AI Identify pro nalezení naučeného cíle, AI Differentiate pro rozdíly mezi OK/NG, AI Count pro počet a také Area, Edge nebo Width pro kontrast a geometrii; běžný Position Adjustment zarovnává navázaná okna. IV4-H R2.10 má navíc dokumentované AI Position Adjustment s učením a AI Target Extraction s naučenou extrakční maskou, kterou lze propojit s vybranými nástroji: při proměnlivém pozadí nebo poloze proto stojí za samostatné vyzkoušení, zatímco pro stabilní hranu či barvu může stačit klasický nástroj. H má také AI Imaging II pro optimalizaci obrazu včetně znaků; dostupnost přesného nástroje, kombinace a přínos na konkrétním dílu je nutné ověřit, samotná podobnost řad podporu v základním IV4 nedokládá.",
+      "evidence": [
+        "IV4_UserManual_WW_GB_AS_167146.pdf p.106,110–119,137,139–140,149–153; iv4_82ffe8b0fedc105a",
+        "IV4_UserManual_WW_GB_AS_170071.pdf p.94,150–155; iv4_f2b18663143f7e12",
+        "CAP-IV4-H-AI-Position-Adjustment; CAP-IV4-H-AI-Target-Extraction"
+      ]
+    }
+  ]
+}

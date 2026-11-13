@@ -1,0 +1,643 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "S-acd2ccbfcf59",
+      "source_id": "iv4_acd2ccbfcf59f1c6",
+      "filename": "AS_163869_IV4_SG_244262_WW_GB_2125_1.pdf",
+      "sha256": "acd2ccbfcf59f1c6d1056e91350f9b3344453a80bf668c3a4b197b2ee98b39f8",
+      "scope": "IV4",
+      "version": "NOT_CONFIRMED",
+      "pages": 12,
+      "language": "en",
+      "classification": "DOCUMENTED",
+      "review_status": "FAST structural evidence; not expert/HW verified",
+      "chapters": [
+        {
+          "title": "CHAPTER 1 Used products",
+          "pdf_page": 2
+        },
+        {
+          "title": "CHAPTER 2 How to connect",
+          "pdf_page": 3
+        },
+        {
+          "title": "CHAPTER 3 Settings for communcation",
+          "pdf_page": 3
+        },
+        {
+          "title": "CHAPTER 4 Create programs and starting the operation",
+          "pdf_page": 7
+        }
+      ],
+      "official_hub": "https://www.keyence.com/support/user/vision/iv4/manual/"
+    },
+    {
+      "id": "S-1e3203d3cb00",
+      "source_id": "iv4_1e3203d3cb0095df",
+      "filename": "IV4-400CA_Datasheet.pdf",
+      "sha256": "1e3203d3cb0095df20268b9be87372df5a8a371ee8b70fb4e39b28fb9673af63",
+      "scope": "IV4",
+      "version": "NOT_CONFIRMED",
+      "pages": 14,
+      "language": "cs",
+      "classification": "DOCUMENTED",
+      "review_status": "FAST structural evidence; not expert/HW verified",
+      "chapters": [],
+      "official_hub": "https://www.keyence.com/support/user/vision/iv4/manual/"
+    },
+    {
+      "id": "S-5cdecf82e195",
+      "source_id": "iv4_5cdecf82e19517e0",
+      "filename": "IV4-400MA_Datasheet.pdf",
+      "sha256": "5cdecf82e19517e0230c512bd3600397f702f056b8172663616deef7641cef0b",
+      "scope": "IV4",
+      "version": "NOT_CONFIRMED",
+      "pages": 14,
+      "language": "cs",
+      "classification": "DOCUMENTED",
+      "review_status": "FAST structural evidence; not expert/HW verified",
+      "chapters": [],
+      "official_hub": "https://www.keyence.com/support/user/vision/iv4/manual/"
+    },
+    {
+      "id": "S-908efa1aaaca",
+      "source_id": "iv4_908efa1aaaca2f1c",
+      "filename": "IV4-G120_Datasheet.pdf",
+      "sha256": "908efa1aaaca2f1cc774373677aed4e0b045d141cda60ff03aa6579426182cca",
+      "scope": "IV4",
+      "version": "NOT_CONFIRMED",
+      "pages": 4,
+      "language": "cs",
+      "classification": "DOCUMENTED",
+      "review_status": "FAST structural evidence; not expert/HW verified",
+      "chapters": [],
+      "official_hub": "https://www.keyence.com/support/user/vision/iv4/manual/"
+    },
+    {
+      "id": "S-e07d913adc60",
+      "source_id": "iv4_e07d913adc60ec33",
+      "filename": "IV4-G400CA_Datasheet.pdf",
+      "sha256": "e07d913adc60ec33ddc5363a7f2868ce748a85250ba061c3d454e481405ca495",
+      "scope": "IV4",
+      "version": "NOT_CONFIRMED",
+      "pages": 19,
+      "language": "cs",
+      "classification": "DOCUMENTED",
+      "review_status": "FAST structural evidence; not expert/HW verified",
+      "chapters": [],
+      "official_hub": "https://www.keyence.com/support/user/vision/iv4/manual/"
+    },
+    {
+      "id": "S-6b9ce227a917",
+      "source_id": "iv4_6b9ce227a9178b5b",
+      "filename": "IV4-G400MA_Datasheet.pdf",
+      "sha256": "6b9ce227a9178b5b1de1afa02553e7c10718da0ae90f7e926e0fc1ef3b515db2",
+      "scope": "IV4",
+      "version": "NOT_CONFIRMED",
+      "pages": 19,
+      "language": "cs",
+      "classification": "DOCUMENTED",
+      "review_status": "FAST structural evidence; not expert/HW verified",
+      "chapters": [],
+      "official_hub": "https://www.keyence.com/support/user/vision/iv4/manual/"
+    },
+    {
+      "id": "S-cac2f74e5d20",
+      "source_id": "iv4_cac2f74e5d20fba3",
+      "filename": "IV4-HG120_Datasheet.pdf",
+      "sha256": "cac2f74e5d20fba3b64ab3c2c00a3047f32a2bbd4b7e9365db77775e94ebf692",
+      "scope": "IV4-H",
+      "version": "NOT_CONFIRMED",
+      "pages": 5,
+      "language": "cs",
+      "classification": "DOCUMENTED",
+      "review_status": "FAST structural evidence; not expert/HW verified",
+      "chapters": [],
+      "official_hub": "https://www.keyence.com/support/user/vision/iv4/manual/"
+    },
+    {
+      "id": "S-f18037439eef",
+      "source_id": "iv4_f18037439eefa6eb",
+      "filename": "IV4_Catalog_KIB_CZ_AS_170022.pdf",
+      "sha256": "f18037439eefa6eb8b56d73df2524774afc21aff59c6c9e0a95c5e24e6f61be2",
+      "scope": "IV4",
+      "version": "NOT_CONFIRMED",
+      "pages": 44,
+      "language": "cs",
+      "classification": "DOCUMENTED",
+      "review_status": "FAST structural evidence; not expert/HW verified",
+      "chapters": [],
+      "official_hub": "https://www.keyence.com/support/user/vision/iv4/manual/"
+    },
+    {
+      "id": "S-edde077685f1",
+      "source_id": "iv4_edde077685f12bbf",
+      "filename": "IV4_ConnectionGuide_CommunicationManual_WW_GB_AS_169473.pdf",
+      "sha256": "edde077685f12bbf4a3c3f60b453bfc7be6339893482d53f442c3110a8871d5b",
+      "scope": "IV4 and IV4-H",
+      "version": "NOT_CONFIRMED",
+      "pages": 36,
+      "language": "en",
+      "classification": "DOCUMENTED",
+      "review_status": "FAST structural evidence; not expert/HW verified",
+      "chapters": [
+        {
+          "title": "Preparation",
+          "pdf_page": 2
+        },
+        {
+          "title": "IV4-H/IV4 Series setup",
+          "pdf_page": 4
+        },
+        {
+          "title": "EtherNet/IP® setup detail",
+          "pdf_page": 6
+        },
+        {
+          "title": "Tag set detail (device map)",
+          "pdf_page": 8
+        },
+        {
+          "title": "Creating a new project",
+          "pdf_page": 12
+        },
+        {
+          "title": "Registering the variables",
+          "pdf_page": 13
+        },
+        {
+          "title": "EtherNet/IP® setup",
+          "pdf_page": 17
+        },
+        {
+          "title": "Initializing the controller",
+          "pdf_page": 23
+        },
+        {
+          "title": "Transferring and synchronizing a project data",
+          "pdf_page": 24
+        },
+        {
+          "title": "Checking the EtherNet/IP® communication status",
+          "pdf_page": 27
+        },
+        {
+          "title": "Reference ladder program",
+          "pdf_page": 29
+        }
+      ],
+      "official_hub": "https://www.keyence.com/support/user/vision/iv4/manual/"
+    },
+    {
+      "id": "S-c43880deea12",
+      "source_id": "iv4_c43880deea122c8e",
+      "filename": "IV4_ConnectionGuide_CommunicationManual_WW_GB_AS_169892.pdf",
+      "sha256": "c43880deea122c8ed8a5eda07972fa54e5ac37e577450260fe86710e666f8b32",
+      "scope": "IV4 and IV4-H",
+      "version": "NOT_CONFIRMED",
+      "pages": 20,
+      "language": "en",
+      "classification": "DOCUMENTED",
+      "review_status": "FAST structural evidence; not expert/HW verified",
+      "chapters": [
+        {
+          "title": "Preparation",
+          "pdf_page": 2
+        },
+        {
+          "title": "IV4-H/IV4 Series setup",
+          "pdf_page": 4
+        },
+        {
+          "title": "Creating a new project",
+          "pdf_page": 7
+        },
+        {
+          "title": "Connecting the PLC and the PC",
+          "pdf_page": 9
+        },
+        {
+          "title": "PROFINET setup",
+          "pdf_page": 12
+        },
+        {
+          "title": "Activating the configuration",
+          "pdf_page": 18
+        },
+        {
+          "title": "Checking PROFINET communication",
+          "pdf_page": 19
+        }
+      ],
+      "official_hub": "https://www.keyence.com/support/user/vision/iv4/manual/"
+    },
+    {
+      "id": "S-385f4ee44124",
+      "source_id": "iv4_385f4ee44124d56e",
+      "filename": "IV4_ConnectionGuide_CommunicationManual_WW_GB_AS_169896.pdf",
+      "sha256": "385f4ee44124d56ee0c85f69ffc488a62ce2c57c5da30107355503e4c1c94169",
+      "scope": "IV4 and IV4-H",
+      "version": "NOT_CONFIRMED",
+      "pages": 32,
+      "language": "en",
+      "classification": "DOCUMENTED",
+      "review_status": "FAST structural evidence; not expert/HW verified",
+      "chapters": [
+        {
+          "title": "Preparation",
+          "pdf_page": 2
+        },
+        {
+          "title": "IV4-H/IV4 Series setup",
+          "pdf_page": 4
+        },
+        {
+          "title": "Creating a new project",
+          "pdf_page": 7
+        },
+        {
+          "title": "PLC Network Settings",
+          "pdf_page": 10
+        },
+        {
+          "title": "Connecting the PLC and the device",
+          "pdf_page": 12
+        },
+        {
+          "title": "Project transfer",
+          "pdf_page": 20
+        },
+        {
+          "title": "Switching to Online mode and checking PROFINET communication",
+          "pdf_page": 22
+        },
+        {
+          "title": "Importing the FB (function block) and checking operation",
+          "pdf_page": 24
+        }
+      ],
+      "official_hub": "https://www.keyence.com/support/user/vision/iv4/manual/"
+    },
+    {
+      "id": "S-30c6de135fec",
+      "source_id": "iv4_30c6de135fec5888",
+      "filename": "IV4_InstructionManual_WW_GB_AS_148740.pdf",
+      "sha256": "30c6de135fec5888c52307b4829e065f2f606e2f2b2a63f6dc3f835c15bb5ba3",
+      "scope": "IV4",
+      "version": "NOT_CONFIRMED",
+      "pages": 2,
+      "language": "en",
+      "classification": "DOCUMENTED",
+      "review_status": "FAST structural evidence; not expert/HW verified",
+      "chapters": [
+        {
+          "title": "Symbols",
+          "pdf_page": 1
+        },
+        {
+          "title": "Safety Information",
+          "pdf_page": 1
+        },
+        {
+          "title": "Important Instructions",
+          "pdf_page": 1
+        },
+        {
+          "title": "Precautions on Regulations and Standards",
+          "pdf_page": 1
+        },
+        {
+          "title": "Safety Precautions on LED Product",
+          "pdf_page": 1
+        },
+        {
+          "title": "Checking the Package Contents",
+          "pdf_page": 1
+        },
+        {
+          "title": "Name and Function of Each Part",
+          "pdf_page": 1
+        },
+        {
+          "title": "Mounting the Sensor",
+          "pdf_page": 1
+        },
+        {
+          "title": "Cables",
+          "pdf_page": 2
+        },
+        {
+          "title": "Specifications",
+          "pdf_page": 2
+        },
+        {
+          "title": "Warranties and Disclaimers",
+          "pdf_page": 2
+        },
+        {
+          "title": "Cautions",
+          "pdf_page": 2
+        }
+      ],
+      "official_hub": "https://www.keyence.com/support/user/vision/iv4/manual/"
+    },
+    {
+      "id": "S-IV4",
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "filename": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "sha256": "82ffe8b0fedc105a4962bd571428fcc1fb2e76eda28631eae163a454d64d16a0",
+      "scope": "IV4",
+      "version": "sensor/panel/Navigator/communication unit R1.30.**; PDF p.10",
+      "pages": 548,
+      "language": "en",
+      "classification": "DOCUMENTED",
+      "review_status": "FAST structural evidence; not expert/HW verified",
+      "chapters": [
+        {
+          "title": "Introduction",
+          "pdf_page": 2
+        },
+        {
+          "title": "Safety Information",
+          "pdf_page": 3
+        },
+        {
+          "title": "Important Instructions",
+          "pdf_page": 4
+        },
+        {
+          "title": "Safety Precautions on LED Product",
+          "pdf_page": 6
+        },
+        {
+          "title": "Precautions on Regulations and Standards",
+          "pdf_page": 7
+        },
+        {
+          "title": "Version of the IV4 Series",
+          "pdf_page": 10
+        },
+        {
+          "title": "Contents",
+          "pdf_page": 11
+        },
+        {
+          "title": "Chapter 1 Getting Started",
+          "pdf_page": 19
+        },
+        {
+          "title": "Chapter 2 Installation and Connection",
+          "pdf_page": 37
+        },
+        {
+          "title": "Chapter 3 Basic Operation",
+          "pdf_page": 69
+        },
+        {
+          "title": "Chapter 4 Sensor Setup",
+          "pdf_page": 87
+        },
+        {
+          "title": "Chapter 5 Running",
+          "pdf_page": 179
+        },
+        {
+          "title": "Chapter 6 Adjusting",
+          "pdf_page": 197
+        },
+        {
+          "title": "Chapter 7 Various Functions",
+          "pdf_page": 223
+        },
+        {
+          "title": "Chapter 8 Saving Settings and Images, SD Card",
+          "pdf_page": 261
+        },
+        {
+          "title": "Chapter 9 Connecting to a Network",
+          "pdf_page": 281
+        },
+        {
+          "title": "Chapter 10 Simulator (PC Only)",
+          "pdf_page": 447
+        },
+        {
+          "title": "Chapter 11 Controlling with the Input/Output Line",
+          "pdf_page": 459
+        },
+        {
+          "title": "Chapter 12 Specifications",
+          "pdf_page": 481
+        },
+        {
+          "title": "Appendices",
+          "pdf_page": 519
+        }
+      ],
+      "official_hub": "https://www.keyence.com/support/user/vision/iv4/manual/"
+    },
+    {
+      "id": "S-IV4-H",
+      "source_id": "iv4_f2b18663143f7e12",
+      "filename": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "sha256": "f2b18663143f7e12b332946929173f0b7a7a42690145b598d2227efcec4d0b64",
+      "scope": "IV4-H",
+      "version": "sensor/panel/Navigator R2.10.**; communication unit R1.30.**; PDF p.10",
+      "pages": 632,
+      "language": "en",
+      "classification": "DOCUMENTED",
+      "review_status": "FAST structural evidence; not expert/HW verified",
+      "chapters": [
+        {
+          "title": "Introduction",
+          "pdf_page": 2
+        },
+        {
+          "title": "Safety Information",
+          "pdf_page": 3
+        },
+        {
+          "title": "Important Instructions",
+          "pdf_page": 4
+        },
+        {
+          "title": "Safety Precautions on LED Product",
+          "pdf_page": 6
+        },
+        {
+          "title": "Precautions on Regulations and Standards",
+          "pdf_page": 7
+        },
+        {
+          "title": "Version of IV4-H",
+          "pdf_page": 10
+        },
+        {
+          "title": "Contents",
+          "pdf_page": 11
+        },
+        {
+          "title": "Chapter 1 Getting Started",
+          "pdf_page": 21
+        },
+        {
+          "title": "Chapter 2 Installation and Connection",
+          "pdf_page": 39
+        },
+        {
+          "title": "Chapter 3 Basic Operation",
+          "pdf_page": 71
+        },
+        {
+          "title": "Chapter 4 Sensor Setup",
+          "pdf_page": 89
+        },
+        {
+          "title": "Chapter 5 Running",
+          "pdf_page": 205
+        },
+        {
+          "title": "Chapter 6 Adjusting",
+          "pdf_page": 229
+        },
+        {
+          "title": "Chapter 7 Various Functions",
+          "pdf_page": 255
+        },
+        {
+          "title": "Chapter 8 Saving Settings and Images, SD Card",
+          "pdf_page": 293
+        },
+        {
+          "title": "Chapter 9 Connecting to a Network",
+          "pdf_page": 313
+        },
+        {
+          "title": "Chapter 10 Simulator (PC Only)",
+          "pdf_page": 529
+        },
+        {
+          "title": "Chapter 11 Controlling with the Input/Output Line",
+          "pdf_page": 541
+        },
+        {
+          "title": "Chapter 12 Specifications",
+          "pdf_page": 563
+        },
+        {
+          "title": "Appendices",
+          "pdf_page": 601
+        }
+      ],
+      "official_hub": "https://www.keyence.com/support/user/vision/iv4/manual/"
+    },
+    {
+      "id": "S-b24d2e849194",
+      "source_id": "iv4_b24d2e8491941271",
+      "filename": "LineupCatalog_WW_GB_AS_161707.pdf",
+      "sha256": "b24d2e84919412717f78ea4f9a5ad926ef9317a0f9f6ae429b96ded86bbde175",
+      "scope": "mixed_family_catalog",
+      "version": "NOT_CONFIRMED",
+      "pages": 32,
+      "language": "en",
+      "classification": "DOCUMENTED",
+      "review_status": "FAST structural evidence; not expert/HW verified",
+      "chapters": [],
+      "official_hub": "https://www.keyence.com/support/user/vision/iv4/manual/"
+    }
+  ],
+  "web_sources": [
+    {
+      "id": "WEB-SUPPORT",
+      "url": "https://www.keyence.com/support/user/vision/iv4/",
+      "accessed": "2026-11-13",
+      "observation": "Support routes, not an API specification",
+      "classification": "DOCUMENTED"
+    },
+    {
+      "id": "WEB-SOFTWARE",
+      "url": "https://www.keyence.com/support/user/vision/iv4/software/",
+      "accessed": "2026-11-13",
+      "observation": "Catalog metadata; marked downloads require serial number; dates differ from detail release pages",
+      "classification": "DOCUMENTED"
+    },
+    {
+      "id": "WEB-MANUALS",
+      "url": "https://www.keyence.com/support/user/vision/iv4/manual/",
+      "accessed": "2026-11-13",
+      "observation": "Manual categories visible; list entries missing in parsed view",
+      "classification": "DOCUMENTED"
+    },
+    {
+      "id": "WEB-PLC",
+      "url": "https://www.keyence.com/support/user/vision/iv4/communication/",
+      "accessed": "2026-11-13",
+      "observation": "PLC guide hub; some vendor entries not exposed by parsed view",
+      "classification": "DOCUMENTED"
+    },
+    {
+      "id": "WEB-SPECS",
+      "url": "https://www.keyence.com/products/sensor/vision-sensor/iv4/specs/",
+      "accessed": "2026-11-13",
+      "observation": "Model-scoped specs and conditional footnotes; not hardware evidence",
+      "classification": "DOCUMENTED"
+    },
+    {
+      "id": "WEB-VIDEO",
+      "url": "https://www.keyence.com/support/user/vision/iv4/video/",
+      "accessed": "2026-11-13",
+      "observation": "Topic descriptions read; videos not executed as runtime tests",
+      "classification": "DOCUMENTED"
+    },
+    {
+      "id": "WEB-KV",
+      "url": "https://www.keyence.com/support/user/controls/plc/connection_guide/kv-x_iv4/",
+      "accessed": "2026-11-13",
+      "observation": "Actual HTML connection guide read; external trigger and settings workflow",
+      "classification": "DOCUMENTED"
+    },
+    {
+      "id": "WEB-NAV-RELEASE",
+      "url": "https://www.keyence.com/popup/downloads/software/description/iv-h1sn/",
+      "accessed": "2026-11-13",
+      "observation": "Public detail HTML read via ordinary HTTPS GET; update R2.10.01 2026-09-01; supports H R2.00/R2.10",
+      "classification": "DOCUMENTED"
+    },
+    {
+      "id": "WEB-IV4-FW",
+      "url": "https://www.keyence.com/popup/downloads/software/description/iv4_g120/",
+      "accessed": "2026-11-13",
+      "observation": "Public detail HTML: R1.30.02 2024-12-10; firmware update clears settings/image history",
+      "classification": "DOCUMENTED"
+    },
+    {
+      "id": "WEB-H-FW",
+      "url": "https://www.keyence.com/popup/downloads/software/description/iv4-h_g120/",
+      "accessed": "2026-11-13",
+      "observation": "Public detail HTML: R2.10.01 2026-09-01; operation-log output added; update clears settings/image history",
+      "classification": "DOCUMENTED"
+    },
+    {
+      "id": "WEB-GSD",
+      "url": "https://www.keyence.com/popup/downloads/software/description/iv4_profinet/",
+      "accessed": "2026-11-13",
+      "observation": "GSDML V2.44 20260203: H R2.00+, IV4 R1.20+, CU1/GCU1 R1.20+",
+      "classification": "DOCUMENTED"
+    },
+    {
+      "id": "WEB-SKILLS",
+      "url": "https://agentskills.io/specification",
+      "accessed": "2026-11-13",
+      "observation": "Agent Skills metadata/directory specification",
+      "classification": "DOCUMENTED"
+    },
+    {
+      "id": "WEB-CODEX-SKILLS",
+      "url": "https://developers.openai.com/codex/skills/",
+      "accessed": "2026-11-13",
+      "observation": "Codex entry redirects to current official build-skills documentation",
+      "classification": "DOCUMENTED"
+    }
+  ]
+}

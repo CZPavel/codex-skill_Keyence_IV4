@@ -1,0 +1,8 @@
+{
+  "name": "keyence-iv4",
+  "version": "1.0.0",
+  "knowledge_reviewed_on": "2026-11-13",
+  "minimum_python": "3.11",
+  "distribution": "public independent synthesis; optional private evidence",
+  "hardware_verified": false
+}

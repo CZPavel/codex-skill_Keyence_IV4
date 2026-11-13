@@ -1,0 +1,42 @@
+{
+  "cli_version": "0.160.0",
+  "filesystem_discovery_run": {
+    "status": "BLOCKED_OR_UNVERIFIED",
+    "note": "CLI announced blocked-by-policy read access; no successful lookup trace. Not counted as a passing discovery/retrieval test."
+  },
+  "explicit_context_run": {
+    "status": "PASS",
+    "skill_loaded": true,
+    "case_count": 3,
+    "mode": "Actual SKILL.md and one public reference supplied through stdin in a fresh ephemeral read-only process; no filesystem discovery claim",
+    "answers": [
+      {
+        "id": "ack",
+        "answer": "Ne. T1+CR potvrzuje přijetí triggeru, nikoli dokončení inspekce ani nový OK. T2 po inspekci vrací RT; při T1 je nutné sledovat stav a ověřit čerstvost RT.",
+        "evidence": [
+          "tcp-contract.md, ACK, dokončení a historie: „T1 vrací T1 okamžitě; tím nepotvrzuje dostupnost nového RT.“",
+          "DOCUMENTED: S-IV4, IV4_UserManual_WW_GB_AS_167146.pdf, p.430, 444–445, FAST iv4_82ffe8b0fedc105a; S-IV4-H, IV4_UserManual_WW_GB_AS_170071.pdf, p.506, 525–526, FAST iv4_f2b18663143f7e12."
+        ]
+      },
+      {
+        "id": "tcp",
+        "answer": "Pro čtení programu použij PR; PNR čte název programu. CSR má u IV4 délku pěti znaků. U IV4-H uvádí detail deset, ale summary pět: rozpor zůstává otevřený a vyžaduje kontrolu zdroje a cílové kamery.",
+        "evidence": [
+          "tcp-contract.md, Skupiny příkazů: „Program a konfigurace | PR, PW, PNR, PNW, DR, DW, CSR, VI“. Dodaný výňatek neobsahuje přesný wire kontrakt PR.",
+          "tcp-contract.md, Parametry a zdrojové nejasnosti: „IV4 CSR je pět znaků, H detail deset, ale jeho summary table nese pět“.",
+          "Zdroj reference: S-IV4, kapitola 9, PDF p.426–446, FAST iv4_82ffe8b0fedc105a; S-IV4-H, p.502–528, FAST iv4_f2b18663143f7e12. Konkrétní stránka CSR ve výňatku chybí."
+        ]
+      },
+      {
+        "id": "image",
+        "answer": "Ne. BR vyžaduje length-aware parser smíšené textové a binární odpovědi. BMP payload může obsahovat CR i čárky, takže rozdělení podle CR obraz poškodí.",
+        "evidence": [
+          "tcp-contract.md, Chyby a recovery: „po textovém headeru následuje 24-bit BMP, jehož byty mohou obsahovat CR i čárku“.",
+          "DOCUMENTED: S-IV4, IV4_UserManual_WW_GB_AS_167146.pdf, p.439–440, FAST iv4_82ffe8b0fedc105a; S-IV4-H, IV4_UserManual_WW_GB_AS_170071.pdf, p.515–516, FAST iv4_f2b18663143f7e12.",
+          "SKILL.md, Rozhodování a důkaz, bod 7: „binární BR se nesmí dělit podle CR uvnitř payloadu“."
+        ]
+      }
+    ]
+  },
+  "hardware_test": false
+}

@@ -1,0 +1,3268 @@
+{
+  "schema_version": 1,
+  "commands": [
+    {
+      "id": "CMD-IV4-T1",
+      "family": "IV4",
+      "code": "T1",
+      "variant": "T1",
+      "purpose": "Zahájit inspekci",
+      "request": "T1 [CR]",
+      "response": "T1 [CR]",
+      "parameters": [],
+      "preconditions": [
+        "Potvrzení je okamžité, nikoli hotový výsledek."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 430,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-RT",
+      "family": "IV4",
+      "code": "RT",
+      "variant": "RT",
+      "purpose": "Přečíst poslední potvrzený výsledek",
+      "request": "RT [CR]",
+      "response": "RT, tool result (standard) [CR]\nRT, tool result (detailed) [CR]",
+      "parameters": [],
+      "preconditions": [
+        "Není čerstvý trigger. Bez inspekce po startu nebo změně programu, případně při OE, vzniká ER,RT,03."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 430,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-T2",
+      "family": "IV4",
+      "code": "T2",
+      "variant": "T2",
+      "purpose": "Trigger s následným výsledkem",
+      "request": "T2 [CR]",
+      "response": "RT, tool result (standard) [CR]\nRT, tool result (detailed) [CR]",
+      "parameters": [],
+      "preconditions": [
+        "Odpověď má prefix RT; vrací se po dokončení. OE nesmí být zapnuto; BUSY/ERROR/Program vede k 03."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 430,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-PR",
+      "family": "IV4",
+      "code": "PR",
+      "variant": "PR",
+      "purpose": "Přečíst aktivní číslo programu",
+      "request": "PR [CR]",
+      "response": "PR, nnn [CR]",
+      "parameters": [
+        {
+          "name": "nnn",
+          "meaning": "Číslo v odpovědi",
+          "range_or_format": "000–127, tři znaky"
+        }
+      ],
+      "preconditions": [],
+      "setting_status_allowed_raw": "ü",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 430,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-PW",
+      "family": "IV4",
+      "code": "PW",
+      "variant": "PW",
+      "purpose": "Změnit program",
+      "request": "PW, nnn [CR]",
+      "response": "PW [CR]",
+      "parameters": [
+        {
+          "name": "nnn",
+          "meaning": "Číslo programu na wire",
+          "range_or_format": "0–127, nejvýše tři číslice"
+        }
+      ],
+      "preconditions": [
+        "Switching method musí dovolovat Panel/PC/Network/Automatic Switching; potvrzení přijde po změně. Volba programu se po vypnutí neuchová."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 430,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-DR",
+      "family": "IV4",
+      "code": "DR",
+      "variant": "DR",
+      "purpose": "Přečíst práh",
+      "request": "DR, nn, a [CR]",
+      "response": "DR, nn, a, bbbbbbb [CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Číslo nástroje",
+          "range_or_format": "01–64; 00 = Position Adjustment"
+        },
+        {
+          "name": "a",
+          "meaning": "Typ meze",
+          "range_or_format": "0 dolní, 1 horní; Through Count: Output 1 / Output 2"
+        },
+        {
+          "name": "bbbbbbb",
+          "meaning": "Práh v odpovědi",
+          "range_or_format": "7 číslic, 0000000–9999999; význam/scaling podle nástroje"
+        }
+      ],
+      "preconditions": [
+        "Omezení 03 pro position correction learning tool a ne-learning tools v Sorting."
+      ],
+      "setting_status_allowed_raw": "ü",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 431,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-PNR",
+      "family": "IV4",
+      "code": "PNR",
+      "variant": "PNR",
+      "purpose": "Přečíst jméno programu",
+      "request": "PNR[CR]\nPNR, a[CR]",
+      "response": "PNR,nnnnnnn[CR]\nPNR,a,nnnnnnnn[CR]",
+      "parameters": [
+        {
+          "name": "a",
+          "meaning": "Volba délky",
+          "range_or_format": "0 nebo vynecháno: 48 bytů; 1: všechny znaky"
+        },
+        {
+          "name": "name",
+          "meaning": "Jméno v UTF-8",
+          "range_or_format": "Pevná varianta doplní NULL; nejvýše 16 znaků"
+        }
+      ],
+      "preconditions": [],
+      "setting_status_allowed_raw": "ü",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 431,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-PNW",
+      "family": "IV4",
+      "code": "PNW",
+      "variant": "PNW",
+      "purpose": "Přejmenovat aktivní program",
+      "request": "PNW,nnnnnnnn[CR]",
+      "response": "PNW[CR]",
+      "parameters": [
+        {
+          "name": "name",
+          "meaning": "Nové jméno",
+          "range_or_format": "nejvýše 16 znaků UTF-8, 1–3 byty/znak; zakázány backslash / : * ? double-quote < > |"
+        }
+      ],
+      "preconditions": [
+        "Wire program 0–31 se ukládá do nonvolatile paměti; 32–127 se podle tohoto popisu nonvolatile neukládá. Nezaměnit s UI číslováním."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 431,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      },
+      "forbidden_characters": [
+        "\\",
+        "/",
+        ":",
+        "*",
+        "?",
+        "\"",
+        "<",
+        ">",
+        "|"
+      ]
+    },
+    {
+      "id": "CMD-IV4-DW",
+      "family": "IV4",
+      "code": "DW",
+      "variant": "DW",
+      "purpose": "Změnit práh",
+      "request": "DW, nn, a, bbbb [CR]",
+      "response": "DW, nn [CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Číslo nástroje",
+          "range_or_format": "01–64; 00 = Position Adjustment"
+        },
+        {
+          "name": "a",
+          "meaning": "Typ meze",
+          "range_or_format": "0 dolní, 1 horní; Through Count: Output 1 / Output 2"
+        },
+        {
+          "name": "bbbb",
+          "meaning": "Práh",
+          "range_or_format": "nejvýše 7 číslic, 0–9999999; pevnou délku doplnit nulami"
+        }
+      ],
+      "preconditions": [
+        "Význam čísla není obecně procento. Omezení změny podle typu/režimu jako v DR."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 431,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-CR",
+      "family": "IV4",
+      "code": "CR",
+      "variant": "CR",
+      "purpose": "Přečíst OCR master text nebo datum",
+      "request": "CR, nn [CR]\nCR,nn,a[CR]",
+      "response": "CR, nn, ssss [CR]\nCR,nn,a,ssss[CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Číslo nástroje",
+          "range_or_format": "01–64; některé operace dovolují speciální 00 podle rodiny"
+        },
+        {
+          "name": "a",
+          "meaning": "Volba délky",
+          "range_or_format": "0/vynecháno: 96 bytů se SP padding; 1: všechny znaky"
+        },
+        {
+          "name": "text",
+          "meaning": "Master text/date",
+          "range_or_format": "Při kontrole pouze počtu znaků je obsah SP"
+        }
+      ],
+      "preconditions": [
+        "Pouze AI OCR; padding se nesmí globálně trimovat."
+      ],
+      "setting_status_allowed_raw": "ü",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 432,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-CW",
+      "family": "IV4",
+      "code": "CW",
+      "variant": "CW",
+      "purpose": "Změnit OCR master text nebo datum",
+      "request": "CW, nn, ssss [CR]",
+      "response": "CW, nn [CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Číslo nástroje",
+          "range_or_format": "01–64; některé operace dovolují speciální 00 podle rodiny"
+        },
+        {
+          "name": "text",
+          "meaning": "Master",
+          "range_or_format": "nejvýše 32 znaků; NULL pro nenastavený master/padding dle konfigurace"
+        }
+      ],
+      "preconditions": [
+        "Neplatí pro count-only, calendar sync ani AI OCR Custom."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 432,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-CNR",
+      "family": "IV4",
+      "code": "CNR",
+      "variant": "CNR",
+      "purpose": "Přečíst interval počtu znaků OCR",
+      "request": "CNR, nn [CR]",
+      "response": "CNR, nn, aa, bb [CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Číslo nástroje",
+          "range_or_format": "01–64; některé operace dovolují speciální 00 podle rodiny"
+        },
+        {
+          "name": "aa,bb",
+          "meaning": "Minimum a maximum",
+          "range_or_format": "odpověď: dvě číslice pro každé, 00–32"
+        }
+      ],
+      "preconditions": [
+        "Vyžaduje OCR judgment only for number of characters."
+      ],
+      "setting_status_allowed_raw": "ü",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 432,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-CNW",
+      "family": "IV4",
+      "code": "CNW",
+      "variant": "CNW",
+      "purpose": "Změnit interval počtu znaků OCR",
+      "request": "CNW, nn, aa, bb [CR]",
+      "response": "CNW, nn [CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Číslo nástroje",
+          "range_or_format": "01–64; některé operace dovolují speciální 00 podle rodiny"
+        },
+        {
+          "name": "aa,bb",
+          "meaning": "Minimum a maximum",
+          "range_or_format": "1–32, 1–2 číslice; aa <= bb"
+        }
+      ],
+      "preconditions": [
+        "Vyžaduje count-only OCR."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 432,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-FNR",
+      "family": "IV4",
+      "code": "FNR",
+      "variant": "FNR",
+      "purpose": "Přečíst základ jména souboru",
+      "request": "FNR,n,m[CR]",
+      "response": "FNR,n,m,ssss[CR]",
+      "parameters": [
+        {
+          "name": "n",
+          "meaning": "Transfer condition",
+          "range_or_format": "1–4"
+        },
+        {
+          "name": "m",
+          "meaning": "Paměť",
+          "range_or_format": "0 volatile; 1 nonvolatile"
+        },
+        {
+          "name": "text",
+          "meaning": "Odpověď",
+          "range_or_format": "64 znaků, SP padding"
+        }
+      ],
+      "preconditions": [
+        "Za provozu se používá volatile kopie."
+      ],
+      "setting_status_allowed_raw": "ü",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 433,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-FNW",
+      "family": "IV4",
+      "code": "FNW",
+      "variant": "FNW",
+      "purpose": "Změnit základ jména souboru",
+      "request": "FNW,n,m,ssss[CR]",
+      "response": "FNW,n,m[CR]",
+      "parameters": [
+        {
+          "name": "n",
+          "meaning": "Transfer condition",
+          "range_or_format": "1–4"
+        },
+        {
+          "name": "m",
+          "meaning": "Cíl",
+          "range_or_format": "0 volatile; 1 volatile i nonvolatile"
+        },
+        {
+          "name": "text",
+          "meaning": "Jméno",
+          "range_or_format": "nejvýše 64 znaků; omezená sada symbolů podle manuálu"
+        }
+      ],
+      "preconditions": [
+        "Pro časté přepisování chránit nonvolatile paměť a volit m=0, pokud je to záměr aplikace."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 433,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      },
+      "allowed_filename_characters": "ASCII alphanumeric plus space ()+-=_.'!#$%&@"
+    },
+    {
+      "id": "CMD-IV4-MR",
+      "family": "IV4",
+      "code": "MR",
+      "variant": "MR",
+      "purpose": "Registrovat právě zachycený master",
+      "request": "MR [CR]",
+      "response": "MR [CR]",
+      "parameters": [],
+      "preconditions": [
+        "Potvrzení až po registraci. Neprojde s AI/AI Identify/AI Count, Sorting či Through Count dle detailu; nastavení Write to ROM řídí opotřebení."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 433,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-RM",
+      "family": "IV4",
+      "code": "RM",
+      "variant": "RM",
+      "purpose": "Zjistit Run/Program",
+      "request": "RM [CR]",
+      "response": "RM, n [CR]",
+      "parameters": [
+        {
+          "name": "n",
+          "meaning": "Stav v odpovědi",
+          "range_or_format": "0 Program; 1 Run"
+        }
+      ],
+      "preconditions": [],
+      "setting_status_allowed_raw": "ü",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 433,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-SR",
+      "family": "IV4",
+      "code": "SR",
+      "variant": "SR",
+      "purpose": "Přečíst sedm stavových příznaků",
+      "request": "SR [CR]",
+      "response": "SR,a,b,c,d,e,f,g[CR]",
+      "parameters": [
+        {
+          "name": "a,b,c,d,e,f,g",
+          "meaning": "Pořadí bitů jako ASCII pole",
+          "range_or_format": "BUSY; Trigger Ready; Imaging; SD recognized; SD low capacity; Warning; Error; každý 0/1"
+        }
+      ],
+      "preconditions": [
+        "Low capacity: 100 MB nebo méně. Trigger Ready není potvrzení platného výsledku."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 433,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-RER",
+      "family": "IV4",
+      "code": "RER",
+      "variant": "RER",
+      "purpose": "Přečíst číslo chyby",
+      "request": "RER [CR]",
+      "response": "RER, nnn [CR]",
+      "parameters": [
+        {
+          "name": "nnn",
+          "meaning": "Kód",
+          "range_or_format": "tři číslice, 000 bez chyby"
+        }
+      ],
+      "preconditions": [
+        "Význam kódu hledat modelově a podle příslušné dokumentace."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 434,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-WR",
+      "family": "IV4",
+      "code": "WR",
+      "variant": "WR",
+      "purpose": "Přečíst číslo varování",
+      "request": "WR [CR]",
+      "response": "WR, nnn [CR]",
+      "parameters": [
+        {
+          "name": "nnn",
+          "meaning": "Kód",
+          "range_or_format": "tři číslice, 000 bez varování"
+        }
+      ],
+      "preconditions": [],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 434,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-WC",
+      "family": "IV4",
+      "code": "WC",
+      "variant": "WC",
+      "purpose": "Vymazat varování",
+      "request": "WC [CR]",
+      "response": "WC [CR]",
+      "parameters": [],
+      "preconditions": [
+        "Zásah do stavu zařízení; pouhá diagnostická otázka jej neautorizuje."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 434,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-SDR",
+      "family": "IV4",
+      "code": "SDR",
+      "variant": "SDR",
+      "purpose": "Přečíst volné místo SD",
+      "request": "SDR [CR]",
+      "response": "SDR, nnnnn[CR]",
+      "parameters": [
+        {
+          "name": "nnnnn",
+          "meaning": "Volné místo",
+          "range_or_format": "5 číslic, MB; 00000 také pokud karta není vložena"
+        }
+      ],
+      "preconditions": [],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 434,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-SDS",
+      "family": "IV4",
+      "code": "SDS",
+      "variant": "SDS",
+      "purpose": "Ukončit ukládání a uvolnit SD",
+      "request": "SDS [CR]",
+      "response": "SDS [CR]",
+      "parameters": [],
+      "preconditions": [
+        "Po řádném dokončení lze kartu odejmout; dostupnost ověřit SR."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 434,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-OE",
+      "family": "IV4",
+      "code": "OE",
+      "variant": "OE",
+      "purpose": "Přepnout automatické odesílání výsledků",
+      "request": "OE, n [CR]",
+      "response": "OE [CR]",
+      "parameters": [
+        {
+          "name": "n",
+          "meaning": "Přepínač",
+          "range_or_format": "0 vypnout, 1 zapnout"
+        }
+      ],
+      "preconditions": [
+        "Výchozí 0 po zapnutí; volba končí odpojením nebo vypnutím. Nový výsledek během přenosu předchozího může být zahozen."
+      ],
+      "setting_status_allowed_raw": "ü",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 434,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-OF",
+      "family": "IV4",
+      "code": "OF",
+      "variant": "OF",
+      "purpose": "Zvolit formát výsledku",
+      "request": "OF, nn [CR]",
+      "response": "OF [CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Formát",
+          "range_or_format": "00 standard, 01 detailed, 02 standard/master, 03 detailed/master; 04 v tomto IV4 manuálu nedoložen"
+        }
+      ],
+      "preconditions": [
+        "Dvě číslice; výchozí 00 po zapnutí; zachování jen po dobu spojení/napájení. 02/03 vyžaduje správnou OR logiku masterů a registraci více masterů."
+      ],
+      "setting_status_allowed_raw": "ü",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 435,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-STR",
+      "family": "IV4",
+      "code": "STR",
+      "variant": "STR",
+      "purpose": "Přečíst statistiku",
+      "request": "STR [CR]",
+      "response": "STR,aaaaa,bbbbb,ccccc,dddddddddd,eeeeeeeeee,ffffffffff,gggggggggg,<tool_statistics>[CR]",
+      "parameters": [
+        {
+          "name": "aaaaa,bbbbb,ccccc",
+          "meaning": "MAX/MIN/AVG času",
+          "range_or_format": "5 číslic, ms; horní mez 10000"
+        },
+        {
+          "name": "d,e,f,g",
+          "meaning": "Trigger/OK/NG/trigger errors",
+          "range_or_format": "10 číslic, mez 10^9; trigger wrap na 0, ostatní saturace"
+        },
+        {
+          "name": "tool stats",
+          "meaning": "Číslo a MAX/MIN hodnoty",
+          "range_or_format": "nn dvě číslice; dvě měřené hodnoty po 7 číslicích"
+        }
+      ],
+      "preconditions": [
+        "Při 0 triggerech ER,STR,03. Through Count vrací určené čítače/tool statistics jako 0; nelze zaměnit s counts PCR."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 436,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      },
+      "response_table_reference": "“\u0007Statistical information reading”\n(page 9-156)"
+    },
+    {
+      "id": "CMD-IV4-STC",
+      "family": "IV4",
+      "code": "STC",
+      "variant": "STC",
+      "purpose": "Resetovat statistiky",
+      "request": "STC [CR]\nSTC,a[CR]",
+      "response": "STC [CR]\nSTC,a[CR]",
+      "parameters": [
+        {
+          "name": "a",
+          "meaning": "Rozsah",
+          "range_or_format": "0 běžící program, 1 všechny programy; podporována také forma bez parametru"
+        }
+      ],
+      "preconditions": [
+        "Smazání diagnostické historie; vyžaduje autorizaci zásahu."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 437,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-VI",
+      "family": "IV4",
+      "code": "VI",
+      "variant": "VI",
+      "purpose": "Přečíst typ hlavy a firmware",
+      "request": "VI [CR]",
+      "response": "VI, nnn, vvv [CR]",
+      "parameters": [
+        {
+          "name": "model,version",
+          "meaning": "Odpověď",
+          "range_or_format": "proměnná délka obou textů"
+        }
+      ],
+      "preconditions": [
+        "Neidentifikuje verzi Navigatoru."
+      ],
+      "setting_status_allowed_raw": "ü",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 437,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-CSR",
+      "family": "IV4",
+      "code": "CSR",
+      "variant": "CSR",
+      "purpose": "Přečíst checksum nastavení",
+      "request": "CSR [CR]",
+      "response": "CSR, aaaaa [CR]",
+      "parameters": [
+        {
+          "name": "checksum",
+          "meaning": "Kontrolní číslo",
+          "range_or_format": "IV4: 5 číslic, 0–65535. IV4-H: detail uvádí 10 číslic; rozsah je v dokumentaci rozporný, viz anomalies"
+        }
+      ],
+      "preconditions": [
+        "Změna sítě/IP není pokryta; není to kryptografický digest ani kompletní backup."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 437,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-TR",
+      "family": "IV4",
+      "code": "TR",
+      "variant": "TR",
+      "purpose": "Přečíst hodiny jednotky",
+      "request": "TR[CR]",
+      "response": "TR,yy,mm,dd,hh,mm,ss[CR]",
+      "parameters": [
+        {
+          "name": "yy,month,dd,hh,minute,ss",
+          "meaning": "Datum/čas",
+          "range_or_format": "rok 20yy:00–99; měsíc1–12; den1–31; hodina0–23; minuty/sekundy0–59"
+        }
+      ],
+      "preconditions": [],
+      "setting_status_allowed_raw": "ü",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 437,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-TC",
+      "family": "IV4",
+      "code": "TC",
+      "variant": "TC",
+      "purpose": "Nastavit hodiny jednotky",
+      "request": "TC,yy,mm,dd,hh,mm,ss[CR]",
+      "response": "TC[CR]",
+      "parameters": [
+        {
+          "name": "yy,month,dd,hh,minute,ss",
+          "meaning": "Datum/čas",
+          "range_or_format": "jako TR; datum musí kalendářně existovat, položky nejvýše 2 číslice"
+        }
+      ],
+      "preconditions": [],
+      "setting_status_allowed_raw": "ü",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 437,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-PCR",
+      "family": "IV4",
+      "code": "PCR",
+      "variant": "PCR",
+      "purpose": "Přečíst AI Through Count",
+      "request": "PCR,nn[CR]",
+      "response": "PCR,nn,bbbbbbb[CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Nástroj",
+          "range_or_format": "01–08"
+        },
+        {
+          "name": "bbbbbbb",
+          "meaning": "Count v odpovědi",
+          "range_or_format": "7 číslic"
+        }
+      ],
+      "preconditions": [
+        "Pouze AI Through Count mode."
+      ],
+      "setting_status_allowed_raw": "ü",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 438,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-PCW",
+      "family": "IV4",
+      "code": "PCW",
+      "variant": "PCW",
+      "purpose": "Přepsat AI Through Count",
+      "request": "PCW,nn,bbbb[CR]",
+      "response": "PCW,nn[CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Nástroj",
+          "range_or_format": "01–08"
+        },
+        {
+          "name": "bbbb",
+          "meaning": "Count",
+          "range_or_format": "nejvýše 7 číslic"
+        }
+      ],
+      "preconditions": [
+        "Pouze Through Count; platný parametr může uspět i bez registrovaného nástroje. Úspěch neprokazuje jeho existenci."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 438,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-SNR",
+      "family": "IV4",
+      "code": "SNR",
+      "variant": "SNR",
+      "purpose": "Přečíst příští OCR serial",
+      "request": "SNR,nn[CR]",
+      "response": "SNR,nn,aa[CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Nástroj",
+          "range_or_format": "00–64 dle detailu"
+        },
+        {
+          "name": "serial",
+          "meaning": "Číslo",
+          "range_or_format": "1–6 číslic podle nastavení"
+        }
+      ],
+      "preconditions": [
+        "Pouze nastavené serial number v AI OCR Custom; jiný nástroj/režim vyvolá chybu."
+      ],
+      "setting_status_allowed_raw": "ü",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 438,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-SNW",
+      "family": "IV4",
+      "code": "SNW",
+      "variant": "SNW",
+      "purpose": "Změnit příští OCR serial",
+      "request": "SNW,nn,aaa[CR]",
+      "response": "SNW,nn[CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Nástroj",
+          "range_or_format": "00–64 dle detailu"
+        },
+        {
+          "name": "serial",
+          "meaning": "Číslo",
+          "range_or_format": "1–6 číslic; musí odpovídat nastaveným mezím a povoleným znakům"
+        }
+      ],
+      "preconditions": [
+        "Pouze AI OCR Custom se serial number."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 438,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-CTR",
+      "family": "IV4",
+      "code": "CTR",
+      "variant": "CTR",
+      "purpose": "Resetovat OCR/Through Count",
+      "request": "CTR[CR]",
+      "response": "CTR[CR]",
+      "parameters": [],
+      "preconditions": [
+        "Působí na všechny příslušné nástroje. Může potvrdit úspěch i když cílový nástroj/režim není nastaven nebo reset input není povolen."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 438,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-CTU",
+      "family": "IV4",
+      "code": "CTU",
+      "variant": "CTU",
+      "purpose": "Zvýšit příští OCR serial",
+      "request": "CTU[CR]",
+      "response": "CTU[CR]",
+      "parameters": [],
+      "preconditions": [
+        "Pouze odpovídající OCR funkce. Úspěch bez účinku je možný, pokud nástroj/chybějící povolení count-up nevyhoví."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 438,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-RFC",
+      "family": "IV4",
+      "code": "RFC",
+      "variant": "RFC",
+      "purpose": "Přečíst počet dokončených výstupních přenosů",
+      "request": "RFC[CR]",
+      "response": "RFC,nnnnnnnnnn[CR]",
+      "parameters": [
+        {
+          "name": "count",
+          "meaning": "Počítadlo",
+          "range_or_format": "10 číslic; 10^9, pak návrat na 1"
+        }
+      ],
+      "preconditions": [
+        "Inkrement až po dokončení všech souborů všech aktivních podmínek pro trigger; FTP chyba čítač nezvýší. Nejde o počet jednotlivých souborů."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 439,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-BR",
+      "family": "IV4",
+      "code": "BR",
+      "variant": "BR",
+      "purpose": "Přečíst nejnovější obraz",
+      "request": "BR,m[CR]",
+      "response": "Br,nnnnnnnnnn,ddddddd,image\ndata",
+      "parameters": [
+        {
+          "name": "m",
+          "meaning": "Volba velikosti",
+          "range_or_format": "0 bez redukce, 1 polovina"
+        },
+        {
+          "name": "trigger",
+          "meaning": "Identifikátor v odpovědi",
+          "range_or_format": "10-digit field according to diagram, ordinary mode 0..DWORD_MAX-1; AI Through Count source literal 999999999 (9 digits): verify representation on device"
+        },
+        {
+          "name": "length",
+          "meaning": "Délka obrazové části",
+          "range_or_format": "7 číslic; následuje BINÁRNÍ 24-bit BMP"
+        }
+      ],
+      "preconditions": [
+        "Nejde o CR text/CSV payload ani realtime stream. Bez latest image je chyba."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "REVIEW_REQUIRED",
+      "anomalies": [
+        "Command table uses Br in response, detailed wire diagram BR; verify case against exact device."
+      ],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 439,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      },
+      "response_kind": "mixed_ascii_header_and_binary_24bit_BMP"
+    },
+    {
+      "id": "CMD-IV4-BR_SD",
+      "family": "IV4",
+      "code": "BR",
+      "variant": "BR_SD",
+      "purpose": "Uložit nejnovější obraz na SD",
+      "request": "BR,SD,m,folder name[CR]",
+      "response": "BR,nnnnnnnnnn[CR]",
+      "parameters": [
+        {
+          "name": "m",
+          "meaning": "Velikost",
+          "range_or_format": "0 bez redukce, 1 polovina"
+        },
+        {
+          "name": "path",
+          "meaning": "Cílová cesta",
+          "range_or_format": "nejvýše 192 bytů včetně cesty; začíná /, nekončí /"
+        },
+        {
+          "name": "trigger",
+          "meaning": "Odpověď",
+          "range_or_format": "čítač jako BR"
+        }
+      ],
+      "preconditions": [
+        "Zápis 24-bit BMP; vytváří adresář, může přepsat existující data; povolené znaky/podmínky cesty ověřit v detailu."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 439,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      },
+      "response_kind": "ASCII_CR",
+      "allowed_filename_characters": "ASCII alphanumeric plus space ()+-=_.'!#$%&@/ for BR_SD path separators only"
+    },
+    {
+      "id": "CMD-IV4-TP",
+      "family": "IV4",
+      "code": "TP",
+      "variant": "TP",
+      "purpose": "Přečíst vnitřní teplotu",
+      "request": "TP[CR]",
+      "response": "TP,pnn.n[CR]",
+      "parameters": [
+        {
+          "name": "pnn.n",
+          "meaning": "Hodnota",
+          "range_or_format": "znaménko +/− a XX.X, °C; nad 99.9 se zobrazuje 99.9"
+        }
+      ],
+      "preconditions": [],
+      "setting_status_allowed_raw": "ü",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 439,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-ITR",
+      "family": "IV4",
+      "code": "ITR",
+      "variant": "ITR",
+      "purpose": "Přečíst komunikační textovou náhradu",
+      "request": "ITR,n,[CR]",
+      "response": "ITR,n,ssss[CR]",
+      "parameters": [
+        {
+          "name": "n",
+          "meaning": "Pořadí",
+          "range_or_format": "1–8"
+        },
+        {
+          "name": "text",
+          "meaning": "Náhrada v odpovědi",
+          "range_or_format": "nenastaveno: 64 SP"
+        }
+      ],
+      "preconditions": [
+        "Tabulka má navíc čárku před CR, detail nikoli; před tvorbou wire klienta vyřešit tento rozpor."
+      ],
+      "setting_status_allowed_raw": "ü",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "REVIEW_REQUIRED",
+      "anomalies": [
+        "Command table trailing comma differs from detail diagram; preserve both until resolved."
+      ],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 440,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-ITW",
+      "family": "IV4",
+      "code": "ITW",
+      "variant": "ITW",
+      "purpose": "Změnit komunikační textovou náhradu",
+      "request": "ITW,n,ssss[CR]",
+      "response": "ITW,n[CR]",
+      "parameters": [
+        {
+          "name": "n",
+          "meaning": "Pořadí",
+          "range_or_format": "1–8"
+        },
+        {
+          "name": "text",
+          "meaning": "Nová náhrada",
+          "range_or_format": "UTF-8 1–3 byty/znak, nejvýše 64 BYTŮ; zakázaná interpunkce dle detailu"
+        }
+      ],
+      "preconditions": [
+        "Volatile paměť, po vypnutí se ztratí."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "ü",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_82ffe8b0fedc105a",
+      "source_document": "IV4_UserManual_WW_GB_AS_167146.pdf",
+      "pdf_page": 429,
+      "detail_pdf_page": 440,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      },
+      "forbidden_characters": [
+        "\"",
+        "*",
+        ",",
+        "/",
+        ":",
+        ";",
+        "<",
+        ">",
+        "?",
+        "[",
+        "\\",
+        "]",
+        "^",
+        "`",
+        "{",
+        "|",
+        "}",
+        "~"
+      ]
+    },
+    {
+      "id": "CMD-IV4-H-T1",
+      "family": "IV4-H",
+      "code": "T1",
+      "variant": "T1",
+      "purpose": "Zahájit inspekci",
+      "request": "T1[CR]",
+      "response": "T1[CR]",
+      "parameters": [],
+      "preconditions": [
+        "Potvrzení je okamžité, nikoli hotový výsledek."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 506,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-RT",
+      "family": "IV4-H",
+      "code": "RT",
+      "variant": "RT",
+      "purpose": "Přečíst poslední potvrzený výsledek",
+      "request": "RT[CR]",
+      "response": "RT, tool result (standard) [CR]\nRT, tool result (detailed) [CR]",
+      "parameters": [],
+      "preconditions": [
+        "Není čerstvý trigger. Bez inspekce po startu nebo změně programu, případně při OE, vzniká ER,RT,03."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 506,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-T2",
+      "family": "IV4-H",
+      "code": "T2",
+      "variant": "T2",
+      "purpose": "Trigger s následným výsledkem",
+      "request": "T2[CR]",
+      "response": "RT, tool result (standard) [CR]\nRT, tool result (detailed) [CR]",
+      "parameters": [],
+      "preconditions": [
+        "Odpověď má prefix RT; vrací se po dokončení. OE nesmí být zapnuto; BUSY/ERROR/Program vede k 03."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 506,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-PR",
+      "family": "IV4-H",
+      "code": "PR",
+      "variant": "PR",
+      "purpose": "Přečíst aktivní číslo programu",
+      "request": "PR[CR]",
+      "response": "PR,nnn[CR]",
+      "parameters": [
+        {
+          "name": "nnn",
+          "meaning": "Číslo v odpovědi",
+          "range_or_format": "000–127, tři znaky"
+        }
+      ],
+      "preconditions": [],
+      "setting_status_allowed_raw": "√",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 506,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-PW",
+      "family": "IV4-H",
+      "code": "PW",
+      "variant": "PW",
+      "purpose": "Změnit program",
+      "request": "PW,nnn[CR]",
+      "response": "PW[CR]",
+      "parameters": [
+        {
+          "name": "nnn",
+          "meaning": "Číslo programu na wire",
+          "range_or_format": "0–127, nejvýše tři číslice"
+        }
+      ],
+      "preconditions": [
+        "Switching method musí dovolovat Panel/PC/Network/Automatic Switching; potvrzení přijde po změně. Volba programu se po vypnutí neuchová."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 506,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-DR",
+      "family": "IV4-H",
+      "code": "DR",
+      "variant": "DR",
+      "purpose": "Přečíst práh",
+      "request": "DR,nn,a[CR]",
+      "response": "DR,nn,a,bbbbbbb[CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Číslo nástroje",
+          "range_or_format": "01–64; 00 = AI Target Extraction pro DW; Position Adjustment/AI Target Extraction pro DR"
+        },
+        {
+          "name": "a",
+          "meaning": "Typ meze",
+          "range_or_format": "0 dolní, 1 horní; Through Count: Output 1 / Output 2"
+        },
+        {
+          "name": "bbbbbbb",
+          "meaning": "Práh v odpovědi",
+          "range_or_format": "7 číslic, 0000000–9999999; význam/scaling podle nástroje"
+        }
+      ],
+      "preconditions": [
+        "Omezení 03 pro position correction learning tool a ne-learning tools v Sorting."
+      ],
+      "setting_status_allowed_raw": "√",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 507,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-PNR",
+      "family": "IV4-H",
+      "code": "PNR",
+      "variant": "PNR",
+      "purpose": "Přečíst jméno programu",
+      "request": "PNR[CR]\nPNR, a[CR]",
+      "response": "PNR,nnnnnnn[CR]\nPNR,a,nnnnnnnn[CR]",
+      "parameters": [
+        {
+          "name": "a",
+          "meaning": "Volba délky",
+          "range_or_format": "0 nebo vynecháno: 48 bytů; 1: všechny znaky"
+        },
+        {
+          "name": "name",
+          "meaning": "Jméno v UTF-8",
+          "range_or_format": "Pevná varianta doplní NULL; nejvýše 16 znaků"
+        }
+      ],
+      "preconditions": [],
+      "setting_status_allowed_raw": "√",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 507,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-PNW",
+      "family": "IV4-H",
+      "code": "PNW",
+      "variant": "PNW",
+      "purpose": "Přejmenovat aktivní program",
+      "request": "PNW,nnnnnnnn[CR]",
+      "response": "PNW[CR]",
+      "parameters": [
+        {
+          "name": "name",
+          "meaning": "Nové jméno",
+          "range_or_format": "nejvýše 16 znaků UTF-8, 1–3 byty/znak; zakázány backslash / : * ? double-quote < > |"
+        }
+      ],
+      "preconditions": [
+        "Wire program 0–31 se ukládá do nonvolatile paměti; 32–127 se podle tohoto popisu nonvolatile neukládá. Nezaměnit s UI číslováním."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 507,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      },
+      "forbidden_characters": [
+        "\\",
+        "/",
+        ":",
+        "*",
+        "?",
+        "\"",
+        "<",
+        ">",
+        "|"
+      ]
+    },
+    {
+      "id": "CMD-IV4-H-DW",
+      "family": "IV4-H",
+      "code": "DW",
+      "variant": "DW",
+      "purpose": "Změnit práh",
+      "request": "DW,nn,a,bbbb[CR]",
+      "response": "DW,nn[CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Číslo nástroje",
+          "range_or_format": "01–64; 00 = AI Target Extraction pro DW; Position Adjustment/AI Target Extraction pro DR"
+        },
+        {
+          "name": "a",
+          "meaning": "Typ meze",
+          "range_or_format": "0 dolní, 1 horní; Through Count: Output 1 / Output 2"
+        },
+        {
+          "name": "bbbb",
+          "meaning": "Práh",
+          "range_or_format": "nejvýše 7 číslic, 0–9999999; pevnou délku doplnit nulami"
+        }
+      ],
+      "preconditions": [
+        "Význam čísla není obecně procento. Omezení změny podle typu/režimu jako v DR."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 508,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-CR",
+      "family": "IV4-H",
+      "code": "CR",
+      "variant": "CR",
+      "purpose": "Přečíst OCR master text nebo datum",
+      "request": "CR,nn[CR]\nCR,nn,a[CR]",
+      "response": "CR,nn,ssss[CR]\nCR,nn,a,ssss[CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Číslo nástroje",
+          "range_or_format": "01–64; některé operace dovolují speciální 00 podle rodiny"
+        },
+        {
+          "name": "a",
+          "meaning": "Volba délky",
+          "range_or_format": "0/vynecháno: 96 bytů se SP padding; 1: všechny znaky"
+        },
+        {
+          "name": "text",
+          "meaning": "Master text/date",
+          "range_or_format": "Při kontrole pouze počtu znaků je obsah SP"
+        }
+      ],
+      "preconditions": [
+        "Pouze AI OCR; padding se nesmí globálně trimovat."
+      ],
+      "setting_status_allowed_raw": "√",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 508,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-CW",
+      "family": "IV4-H",
+      "code": "CW",
+      "variant": "CW",
+      "purpose": "Změnit OCR master text nebo datum",
+      "request": "CW,nn,ssss[CR]",
+      "response": "CW,nn[CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Číslo nástroje",
+          "range_or_format": "01–64; některé operace dovolují speciální 00 podle rodiny"
+        },
+        {
+          "name": "text",
+          "meaning": "Master",
+          "range_or_format": "nejvýše 32 znaků; NULL pro nenastavený master/padding dle konfigurace"
+        }
+      ],
+      "preconditions": [
+        "Neplatí pro count-only, calendar sync ani AI OCR Custom."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 508,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-CNR",
+      "family": "IV4-H",
+      "code": "CNR",
+      "variant": "CNR",
+      "purpose": "Přečíst interval počtu znaků OCR",
+      "request": "CNR,nn[CR]",
+      "response": "CNR,nn,aa,bb[CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Číslo nástroje",
+          "range_or_format": "01–64; některé operace dovolují speciální 00 podle rodiny"
+        },
+        {
+          "name": "aa,bb",
+          "meaning": "Minimum a maximum",
+          "range_or_format": "odpověď: dvě číslice pro každé, 00–32"
+        }
+      ],
+      "preconditions": [
+        "Vyžaduje OCR judgment only for number of characters."
+      ],
+      "setting_status_allowed_raw": "√",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 509,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-CNW",
+      "family": "IV4-H",
+      "code": "CNW",
+      "variant": "CNW",
+      "purpose": "Změnit interval počtu znaků OCR",
+      "request": "CNW,nn,aa,bb[CR]",
+      "response": "CNW,nn[CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Číslo nástroje",
+          "range_or_format": "01–64; některé operace dovolují speciální 00 podle rodiny"
+        },
+        {
+          "name": "aa,bb",
+          "meaning": "Minimum a maximum",
+          "range_or_format": "1–32, 1–2 číslice; aa <= bb"
+        }
+      ],
+      "preconditions": [
+        "Vyžaduje count-only OCR."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 509,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-FNR",
+      "family": "IV4-H",
+      "code": "FNR",
+      "variant": "FNR",
+      "purpose": "Přečíst základ jména souboru",
+      "request": "FNR,n,m[CR]",
+      "response": "FNR,n,m,ssss[CR]",
+      "parameters": [
+        {
+          "name": "n",
+          "meaning": "Transfer condition",
+          "range_or_format": "1–4"
+        },
+        {
+          "name": "m",
+          "meaning": "Paměť",
+          "range_or_format": "0 volatile; 1 nonvolatile"
+        },
+        {
+          "name": "text",
+          "meaning": "Odpověď",
+          "range_or_format": "64 znaků, SP padding"
+        }
+      ],
+      "preconditions": [
+        "Za provozu se používá volatile kopie."
+      ],
+      "setting_status_allowed_raw": "√",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 509,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-FNW",
+      "family": "IV4-H",
+      "code": "FNW",
+      "variant": "FNW",
+      "purpose": "Změnit základ jména souboru",
+      "request": "FNW,n,m,ssss[CR]",
+      "response": "FNW,n,m[CR]",
+      "parameters": [
+        {
+          "name": "n",
+          "meaning": "Transfer condition",
+          "range_or_format": "1–4"
+        },
+        {
+          "name": "m",
+          "meaning": "Cíl",
+          "range_or_format": "0 volatile; 1 volatile i nonvolatile"
+        },
+        {
+          "name": "text",
+          "meaning": "Jméno",
+          "range_or_format": "nejvýše 64 znaků; omezená sada symbolů podle manuálu"
+        }
+      ],
+      "preconditions": [
+        "Pro časté přepisování chránit nonvolatile paměť a volit m=0, pokud je to záměr aplikace."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 509,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      },
+      "allowed_filename_characters": "ASCII alphanumeric plus space ()+-=_.'!#$%&@"
+    },
+    {
+      "id": "CMD-IV4-H-MR",
+      "family": "IV4-H",
+      "code": "MR",
+      "variant": "MR",
+      "purpose": "Registrovat právě zachycený master",
+      "request": "MR[CR]",
+      "response": "MR[CR]",
+      "parameters": [],
+      "preconditions": [
+        "Potvrzení až po registraci. Neprojde s AI/AI Identify/AI Count, Sorting či Through Count dle detailu; nastavení Write to ROM řídí opotřebení."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 510,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-RM",
+      "family": "IV4-H",
+      "code": "RM",
+      "variant": "RM",
+      "purpose": "Zjistit Run/Program",
+      "request": "RM[CR]",
+      "response": "RM,n[CR]",
+      "parameters": [
+        {
+          "name": "n",
+          "meaning": "Stav v odpovědi",
+          "range_or_format": "0 Program; 1 Run"
+        }
+      ],
+      "preconditions": [],
+      "setting_status_allowed_raw": "√",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 510,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-SR",
+      "family": "IV4-H",
+      "code": "SR",
+      "variant": "SR",
+      "purpose": "Přečíst sedm stavových příznaků",
+      "request": "SR[CR]",
+      "response": "SR,a,b,c,d,e,f,g[CR]",
+      "parameters": [
+        {
+          "name": "a,b,c,d,e,f,g",
+          "meaning": "Pořadí bitů jako ASCII pole",
+          "range_or_format": "BUSY; Trigger Ready; Imaging; SD recognized; SD low capacity; Warning; Error; každý 0/1"
+        }
+      ],
+      "preconditions": [
+        "Low capacity: 100 MB nebo méně. Trigger Ready není potvrzení platného výsledku."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 510,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-RER",
+      "family": "IV4-H",
+      "code": "RER",
+      "variant": "RER",
+      "purpose": "Přečíst číslo chyby",
+      "request": "RER[CR]",
+      "response": "RER,nnn[CR]",
+      "parameters": [
+        {
+          "name": "nnn",
+          "meaning": "Kód",
+          "range_or_format": "tři číslice, 000 bez chyby"
+        }
+      ],
+      "preconditions": [
+        "Význam kódu hledat modelově a podle příslušné dokumentace."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 510,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-WR",
+      "family": "IV4-H",
+      "code": "WR",
+      "variant": "WR",
+      "purpose": "Přečíst číslo varování",
+      "request": "WR[CR]",
+      "response": "WR,nnn[CR]",
+      "parameters": [
+        {
+          "name": "nnn",
+          "meaning": "Kód",
+          "range_or_format": "tři číslice, 000 bez varování"
+        }
+      ],
+      "preconditions": [],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 510,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-WC",
+      "family": "IV4-H",
+      "code": "WC",
+      "variant": "WC",
+      "purpose": "Vymazat varování",
+      "request": "WC[CR]",
+      "response": "WC[CR]",
+      "parameters": [],
+      "preconditions": [
+        "Zásah do stavu zařízení; pouhá diagnostická otázka jej neautorizuje."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 510,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-SDR",
+      "family": "IV4-H",
+      "code": "SDR",
+      "variant": "SDR",
+      "purpose": "Přečíst volné místo SD",
+      "request": "SDR[CR]",
+      "response": "SDR,nnnnn[CR]",
+      "parameters": [
+        {
+          "name": "nnnnn",
+          "meaning": "Volné místo",
+          "range_or_format": "5 číslic, MB; 00000 také pokud karta není vložena"
+        }
+      ],
+      "preconditions": [],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 511,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-SDS",
+      "family": "IV4-H",
+      "code": "SDS",
+      "variant": "SDS",
+      "purpose": "Ukončit ukládání a uvolnit SD",
+      "request": "SDS[CR]",
+      "response": "SDS[CR]",
+      "parameters": [],
+      "preconditions": [
+        "Po řádném dokončení lze kartu odejmout; dostupnost ověřit SR."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 511,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-OE",
+      "family": "IV4-H",
+      "code": "OE",
+      "variant": "OE",
+      "purpose": "Přepnout automatické odesílání výsledků",
+      "request": "OE,n[CR]",
+      "response": "OE[CR]",
+      "parameters": [
+        {
+          "name": "n",
+          "meaning": "Přepínač",
+          "range_or_format": "0 vypnout, 1 zapnout"
+        }
+      ],
+      "preconditions": [
+        "Výchozí 0 po zapnutí; volba končí odpojením nebo vypnutím. Nový výsledek během přenosu předchozího může být zahozen."
+      ],
+      "setting_status_allowed_raw": "√",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 511,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-OF",
+      "family": "IV4-H",
+      "code": "OF",
+      "variant": "OF",
+      "purpose": "Zvolit formát výsledku",
+      "request": "OF,nn[CR]",
+      "response": "OF[CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Formát",
+          "range_or_format": "00 standard, 01 detailed, 02 standard s master číslem, 03 detailed s master číslem; IV4-H navíc 04 coordinates"
+        }
+      ],
+      "preconditions": [
+        "Dvě číslice; výchozí 00 po zapnutí; zachování jen po dobu spojení/napájení. 02/03 vyžaduje správnou OR logiku masterů a registraci více masterů.",
+        "OF04 jen Standard s multiple master registration Disable nebo Sorting; není pro Standard multi-master."
+      ],
+      "setting_status_allowed_raw": "√",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 511,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-STR",
+      "family": "IV4-H",
+      "code": "STR",
+      "variant": "STR",
+      "purpose": "Přečíst statistiku",
+      "request": "STR[CR]",
+      "response": "STR,aaaaa,bbbbb,ccccc,dddddddddd,eeeeeeeeee,ffffffffff,gggggggggg,<tool_statistics>[CR]",
+      "parameters": [
+        {
+          "name": "aaaaa,bbbbb,ccccc",
+          "meaning": "MAX/MIN/AVG času",
+          "range_or_format": "5 číslic, ms; horní mez 10000"
+        },
+        {
+          "name": "d,e,f,g",
+          "meaning": "Trigger/OK/NG/trigger errors",
+          "range_or_format": "10 číslic, mez 10^9; trigger wrap na 0, ostatní saturace"
+        },
+        {
+          "name": "tool stats",
+          "meaning": "Číslo a MAX/MIN hodnoty",
+          "range_or_format": "nn dvě číslice; dvě měřené hodnoty po 7 číslicích"
+        }
+      ],
+      "preconditions": [
+        "Při 0 triggerech ER,STR,03. Through Count vrací určené čítače/tool statistics jako 0; nelze zaměnit s counts PCR."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 512,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      },
+      "response_table_reference": "“\u0007Statistical information reading”\n(page 9-200)"
+    },
+    {
+      "id": "CMD-IV4-H-STC",
+      "family": "IV4-H",
+      "code": "STC",
+      "variant": "STC",
+      "purpose": "Resetovat statistiky",
+      "request": "STC[CR]\nSTC,a[CR]",
+      "response": "STC[CR]\nSTC,a[CR]",
+      "parameters": [
+        {
+          "name": "a",
+          "meaning": "Rozsah",
+          "range_or_format": "0 běžící program, 1 všechny programy; podporována také forma bez parametru"
+        }
+      ],
+      "preconditions": [
+        "Smazání diagnostické historie; vyžaduje autorizaci zásahu."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 513,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-VI",
+      "family": "IV4-H",
+      "code": "VI",
+      "variant": "VI",
+      "purpose": "Přečíst typ hlavy a firmware",
+      "request": "VI[CR]",
+      "response": "VI,nnn,vvv[CR]",
+      "parameters": [
+        {
+          "name": "model,version",
+          "meaning": "Odpověď",
+          "range_or_format": "proměnná délka obou textů"
+        }
+      ],
+      "preconditions": [
+        "Neidentifikuje verzi Navigatoru."
+      ],
+      "setting_status_allowed_raw": "√",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 513,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-CSR",
+      "family": "IV4-H",
+      "code": "CSR",
+      "variant": "CSR",
+      "purpose": "Přečíst checksum nastavení",
+      "request": "CSR[CR]",
+      "response": "CSR,aaaaa[CR]",
+      "parameters": [
+        {
+          "name": "checksum",
+          "meaning": "Kontrolní číslo",
+          "range_or_format": "IV4: 5 číslic, 0–65535. IV4-H: detail uvádí 10 číslic; rozsah je v dokumentaci rozporný, viz anomalies"
+        }
+      ],
+      "preconditions": [
+        "Změna sítě/IP není pokryta; není to kryptografický digest ani kompletní backup."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "REVIEW_REQUIRED",
+      "anomalies": [
+        "Table width 5 versus detailed width 10 at p.513; OPC UA p.487 lists UInt16 but 32-bit range; runtime/model-specific check required."
+      ],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 513,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-TR",
+      "family": "IV4-H",
+      "code": "TR",
+      "variant": "TR",
+      "purpose": "Přečíst hodiny jednotky",
+      "request": "TR[CR]",
+      "response": "TR,yy,mm,dd,hh,mm,ss[CR]",
+      "parameters": [
+        {
+          "name": "yy,month,dd,hh,minute,ss",
+          "meaning": "Datum/čas",
+          "range_or_format": "rok 20yy:00–99; měsíc1–12; den1–31; hodina0–23; minuty/sekundy0–59"
+        }
+      ],
+      "preconditions": [],
+      "setting_status_allowed_raw": "√",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 513,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-TC",
+      "family": "IV4-H",
+      "code": "TC",
+      "variant": "TC",
+      "purpose": "Nastavit hodiny jednotky",
+      "request": "TC,yy,mm,dd,hh,mm,ss[CR]",
+      "response": "TC[CR]",
+      "parameters": [
+        {
+          "name": "yy,month,dd,hh,minute,ss",
+          "meaning": "Datum/čas",
+          "range_or_format": "jako TR; datum musí kalendářně existovat, položky nejvýše 2 číslice"
+        }
+      ],
+      "preconditions": [],
+      "setting_status_allowed_raw": "√",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 513,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-PCR",
+      "family": "IV4-H",
+      "code": "PCR",
+      "variant": "PCR",
+      "purpose": "Přečíst AI Through Count",
+      "request": "PCR,nn[CR]",
+      "response": "PCR,nn,bbbbbbb[CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Nástroj",
+          "range_or_format": "01–08"
+        },
+        {
+          "name": "bbbbbbb",
+          "meaning": "Count v odpovědi",
+          "range_or_format": "7 číslic"
+        }
+      ],
+      "preconditions": [
+        "Pouze AI Through Count mode."
+      ],
+      "setting_status_allowed_raw": "√",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 514,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-PCW",
+      "family": "IV4-H",
+      "code": "PCW",
+      "variant": "PCW",
+      "purpose": "Přepsat AI Through Count",
+      "request": "PCW,nn,bbbb[CR]",
+      "response": "PCW,nn[CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Nástroj",
+          "range_or_format": "01–08"
+        },
+        {
+          "name": "bbbb",
+          "meaning": "Count",
+          "range_or_format": "nejvýše 7 číslic"
+        }
+      ],
+      "preconditions": [
+        "Pouze Through Count; platný parametr může uspět i bez registrovaného nástroje. Úspěch neprokazuje jeho existenci."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 514,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-SNR",
+      "family": "IV4-H",
+      "code": "SNR",
+      "variant": "SNR",
+      "purpose": "Přečíst příští OCR serial",
+      "request": "SNR,nn[CR]",
+      "response": "SNR,nn,aa[CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Nástroj",
+          "range_or_format": "00–64 dle detailu"
+        },
+        {
+          "name": "serial",
+          "meaning": "Číslo",
+          "range_or_format": "1–6 číslic podle nastavení"
+        }
+      ],
+      "preconditions": [
+        "Pouze nastavené serial number v AI OCR Custom; jiný nástroj/režim vyvolá chybu."
+      ],
+      "setting_status_allowed_raw": "√",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 514,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-SNW",
+      "family": "IV4-H",
+      "code": "SNW",
+      "variant": "SNW",
+      "purpose": "Změnit příští OCR serial",
+      "request": "SNW,nn,aaa[CR]",
+      "response": "SNW,nn[CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Nástroj",
+          "range_or_format": "00–64 dle detailu"
+        },
+        {
+          "name": "serial",
+          "meaning": "Číslo",
+          "range_or_format": "1–6 číslic; musí odpovídat nastaveným mezím a povoleným znakům"
+        }
+      ],
+      "preconditions": [
+        "Pouze AI OCR Custom se serial number."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 514,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-CTR",
+      "family": "IV4-H",
+      "code": "CTR",
+      "variant": "CTR",
+      "purpose": "Resetovat OCR/Through Count",
+      "request": "CTR[CR]",
+      "response": "CTR[CR]",
+      "parameters": [],
+      "preconditions": [
+        "Působí na všechny příslušné nástroje. Může potvrdit úspěch i když cílový nástroj/režim není nastaven nebo reset input není povolen."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 514,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-CTU",
+      "family": "IV4-H",
+      "code": "CTU",
+      "variant": "CTU",
+      "purpose": "Zvýšit příští OCR serial",
+      "request": "CTU[CR]",
+      "response": "CTU[CR]",
+      "parameters": [],
+      "preconditions": [
+        "Pouze odpovídající OCR funkce. Úspěch bez účinku je možný, pokud nástroj/chybějící povolení count-up nevyhoví."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 514,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-RFC",
+      "family": "IV4-H",
+      "code": "RFC",
+      "variant": "RFC",
+      "purpose": "Přečíst počet dokončených výstupních přenosů",
+      "request": "RFC[CR]",
+      "response": "RFC,nnnnnnnnnn[CR]",
+      "parameters": [
+        {
+          "name": "count",
+          "meaning": "Počítadlo",
+          "range_or_format": "10 číslic; 10^9, pak návrat na 1"
+        }
+      ],
+      "preconditions": [
+        "Inkrement až po dokončení všech souborů všech aktivních podmínek pro trigger; FTP chyba čítač nezvýší. Nejde o počet jednotlivých souborů."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 515,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-DWC",
+      "family": "IV4-H",
+      "code": "DWC",
+      "variant": "DWC",
+      "purpose": "Změnit souřadnicový limit",
+      "request": "DWC,nn,a,b,ccccc[CR]",
+      "response": "DWC,nn[CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Číslo nástroje",
+          "range_or_format": "01–64; některé operace dovolují speciální 00 podle rodiny"
+        },
+        {
+          "name": "a",
+          "meaning": "Osa",
+          "range_or_format": "0 X; 1 Y; 2 úhel"
+        },
+        {
+          "name": "b",
+          "meaning": "Mez",
+          "range_or_format": "0 dolní; 1 horní"
+        },
+        {
+          "name": "ccccc",
+          "meaning": "Hodnota",
+          "range_or_format": "nejvýše 6 znaků; source rozsahy X ±12800, Y ±9600, úhel ±1800; source zmiňuje krok 0.1, jednotku/scaling ověřit pro tool"
+        }
+      ],
+      "preconditions": [
+        "IV4-H; ne Sorting; nelze nastavit horní pod dolní; nástroj musí mít souřadnici/úhel."
+      ],
+      "setting_status_allowed_raw": "√",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 515,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-DRC",
+      "family": "IV4-H",
+      "code": "DRC",
+      "variant": "DRC",
+      "purpose": "Přečíst souřadnicový limit",
+      "request": "DRC,nn,a,b[CR]",
+      "response": "DRC,nn,a,b,ccccc[CR]",
+      "parameters": [
+        {
+          "name": "nn",
+          "meaning": "Číslo nástroje",
+          "range_or_format": "01–64; některé operace dovolují speciální 00 podle rodiny"
+        },
+        {
+          "name": "a,b",
+          "meaning": "Osa a mez",
+          "range_or_format": "stejné jako DWC"
+        },
+        {
+          "name": "ccccc",
+          "meaning": "Výsledek",
+          "range_or_format": "do 6 znaků s nulovým paddingem; jednotku/scaling ověřit podle nástroje"
+        }
+      ],
+      "preconditions": [
+        "IV4-H; nástroj musí poskytovat požadovanou souřadnici/úhel; ne Sorting."
+      ],
+      "setting_status_allowed_raw": "√",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 515,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-BR",
+      "family": "IV4-H",
+      "code": "BR",
+      "variant": "BR",
+      "purpose": "Přečíst nejnovější obraz",
+      "request": "BR,m[CR]",
+      "response": "Br,nnnnnnnnnn,ddddddd,image data",
+      "parameters": [
+        {
+          "name": "m",
+          "meaning": "Volba velikosti",
+          "range_or_format": "0 bez redukce, 1 polovina"
+        },
+        {
+          "name": "trigger",
+          "meaning": "Identifikátor v odpovědi",
+          "range_or_format": "10-digit field according to diagram, ordinary mode 0..DWORD_MAX-1; AI Through Count source literal 999999999 (9 digits): verify representation on device"
+        },
+        {
+          "name": "length",
+          "meaning": "Délka obrazové části",
+          "range_or_format": "7 číslic; následuje BINÁRNÍ 24-bit BMP"
+        }
+      ],
+      "preconditions": [
+        "Nejde o CR text/CSV payload ani realtime stream. Bez latest image je chyba."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "REVIEW_REQUIRED",
+      "anomalies": [
+        "Command table uses Br in response, detailed wire diagram BR; verify case against exact device."
+      ],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 515,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      },
+      "response_kind": "mixed_ascii_header_and_binary_24bit_BMP"
+    },
+    {
+      "id": "CMD-IV4-H-BR_SD",
+      "family": "IV4-H",
+      "code": "BR",
+      "variant": "BR_SD",
+      "purpose": "Uložit nejnovější obraz na SD",
+      "request": "BR,SD,m,folder name[CR]",
+      "response": "BR,nnnnnnnnnn[CR]",
+      "parameters": [
+        {
+          "name": "m",
+          "meaning": "Velikost",
+          "range_or_format": "0 bez redukce, 1 polovina"
+        },
+        {
+          "name": "path",
+          "meaning": "Cílová cesta",
+          "range_or_format": "nejvýše 192 bytů včetně cesty; začíná /, nekončí /"
+        },
+        {
+          "name": "trigger",
+          "meaning": "Odpověď",
+          "range_or_format": "čítač jako BR"
+        }
+      ],
+      "preconditions": [
+        "Zápis 24-bit BMP; vytváří adresář, může přepsat existující data; povolené znaky/podmínky cesty ověřit v detailu."
+      ],
+      "setting_status_allowed_raw": "×",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 516,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      },
+      "response_kind": "ASCII_CR",
+      "allowed_filename_characters": "ASCII alphanumeric plus space ()+-=_.'!#$%&@/ for BR_SD path separators only"
+    },
+    {
+      "id": "CMD-IV4-H-TP",
+      "family": "IV4-H",
+      "code": "TP",
+      "variant": "TP",
+      "purpose": "Přečíst vnitřní teplotu",
+      "request": "TP[CR]",
+      "response": "TP,pnn.n[CR]",
+      "parameters": [
+        {
+          "name": "pnn.n",
+          "meaning": "Hodnota",
+          "range_or_format": "znaménko +/− a XX.X, °C; nad 99.9 se zobrazuje 99.9"
+        }
+      ],
+      "preconditions": [],
+      "setting_status_allowed_raw": "√",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 516,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-ITR",
+      "family": "IV4-H",
+      "code": "ITR",
+      "variant": "ITR",
+      "purpose": "Přečíst komunikační textovou náhradu",
+      "request": "ITR,n,[CR]",
+      "response": "ITR,n,ssss[CR]",
+      "parameters": [
+        {
+          "name": "n",
+          "meaning": "Pořadí",
+          "range_or_format": "1–8"
+        },
+        {
+          "name": "text",
+          "meaning": "Náhrada v odpovědi",
+          "range_or_format": "nenastaveno: 64 SP"
+        }
+      ],
+      "preconditions": [
+        "Tabulka má navíc čárku před CR, detail nikoli; před tvorbou wire klienta vyřešit tento rozpor."
+      ],
+      "setting_status_allowed_raw": "√",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "REVIEW_REQUIRED",
+      "anomalies": [
+        "Command table trailing comma differs from detail diagram; preserve both until resolved."
+      ],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 516,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    },
+    {
+      "id": "CMD-IV4-H-ITW",
+      "family": "IV4-H",
+      "code": "ITW",
+      "variant": "ITW",
+      "purpose": "Změnit komunikační textovou náhradu",
+      "request": "ITW,n,ssss[CR]",
+      "response": "ITW,n[CR]",
+      "parameters": [
+        {
+          "name": "n",
+          "meaning": "Pořadí",
+          "range_or_format": "1–8"
+        },
+        {
+          "name": "text",
+          "meaning": "Nová náhrada",
+          "range_or_format": "UTF-8 1–3 byty/znak, nejvýše 64 BYTŮ; zakázaná interpunkce dle detailu"
+        }
+      ],
+      "preconditions": [
+        "Volatile paměť, po vypnutí se ztratí."
+      ],
+      "setting_status_allowed_raw": "√",
+      "through_count_allowed_raw": "√",
+      "classification": "DOCUMENTED",
+      "wire_status": "DOCUMENTED_NOT_RUNTIME_TESTED",
+      "anomalies": [],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 516,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      },
+      "forbidden_characters": [
+        "\"",
+        "*",
+        ",",
+        "/",
+        ":",
+        ";",
+        "<",
+        ">",
+        "?",
+        "[",
+        "\\",
+        "]",
+        "^",
+        "`",
+        "{",
+        "|",
+        "}",
+        "~"
+      ]
+    },
+    {
+      "id": "CMD-IV4-H-MC",
+      "family": "IV4-H",
+      "code": "MC",
+      "variant": "MC",
+      "purpose": "Provést model check",
+      "request": "MC[R]",
+      "response": "MC,n[CR]",
+      "parameters": [],
+      "preconditions": [
+        "IV4-H; Run; Standard/Sorting; existující nepoškozené test images. Response 0 failure/1 success; po úspěchu ověřit WR pro 046. Tabulkový MC[R] je v rozporu s detailním CR."
+      ],
+      "setting_status_allowed_raw": "√",
+      "through_count_allowed_raw": "×",
+      "classification": "DOCUMENTED",
+      "wire_status": "REVIEW_REQUIRED",
+      "anomalies": [
+        "Table MC[R] differs from MC + CR in detail p.516."
+      ],
+      "source_id": "iv4_f2b18663143f7e12",
+      "source_document": "IV4_UserManual_WW_GB_AS_170071.pdf",
+      "pdf_page": 505,
+      "detail_pdf_page": 516,
+      "chapter": "TCP/IP Non-procedural Communication Specifications and Functions",
+      "timeout": {
+        "classification": "UNVERIFIED",
+        "value": null,
+        "note": "No universal deadline established; choose measured application timeout, do not report a guessed vendor limit."
+      }
+    }
+  ],
+  "note": "Independent interoperability facts and own parameter explanations; not manual chapter reproduction. Formal command spelling retained with source anomalies."
+}

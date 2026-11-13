@@ -1,0 +1,144 @@
+{
+  "definitions": {
+    "FULL": "Substantial independent usable coverage of the named topic, not a replacement for all manual pages",
+    "PARTIAL": "Useful coverage with explicit missing detail",
+    "REFERENCED_ONLY": "Source route provided, underlying original material not bundled",
+    "MISSING": "No route/content",
+    "UNVERIFIED": "Capability or actual execution not established"
+  },
+  "areas": [
+    {
+      "area": "A",
+      "topic": "Hardware/model selection",
+      "status": "PARTIAL",
+      "reference": "skills/keyence-iv4/references/hardware.md",
+      "limits": "Model families, FOV examples/conditional limits; not every dimension/accessory pinout reproduced"
+    },
+    {
+      "area": "B",
+      "topic": "Navigator workflow and programs",
+      "status": "FULL",
+      "reference": "skills/keyence-iv4/references/navigator.md",
+      "limits": "Detailed setup/program/storage workflow within cited manual versions; runtime unverified"
+    },
+    {
+      "area": "C",
+      "topic": "Vision tool families",
+      "status": "FULL",
+      "reference": "skills/keyence-iv4/references/vision-tools.md",
+      "limits": "Major supported tool classes and concrete decision/parameter checks; not every UI parameter page"
+    },
+    {
+      "area": "C2",
+      "topic": "All per-tool advanced UI parameters",
+      "status": "PARTIAL",
+      "reference": "skills/keyence-iv4/references/vision-tools.md",
+      "limits": "Exact uncommon parameter requires source/corpus retrieval"
+    },
+    {
+      "area": "D",
+      "topic": "Logic/validity/trigger/buffering",
+      "status": "FULL",
+      "reference": "skills/keyence-iv4/references/evaluation-logic.md",
+      "limits": "Total/Logic and physical 2-image Buffer distinction, source-scoped"
+    },
+    {
+      "area": "E",
+      "topic": "Documented command inventory",
+      "status": "FULL",
+      "reference": "skills/keyence-iv4/references/commands.json",
+      "limits": "43 IV4 + 46 IV4-H rows; every formal syntax and detail reference"
+    },
+    {
+      "area": "E2",
+      "topic": "Wire parameters and anomalies",
+      "status": "PARTIAL",
+      "reference": "skills/keyence-iv4/references/tcp-contract.md",
+      "limits": "Own parameter summaries for all 46 variants; unresolved source CSR/ITR/MC/BR conflicts remain explicit"
+    },
+    {
+      "area": "F",
+      "topic": "PLC integration workflows",
+      "status": "FULL",
+      "reference": "skills/keyence-iv4/references/plc-protocols.md",
+      "limits": "Siemens/OMRON/Rockwell/Beckhoff distinctions, EIP/PN/ECAT and handshake"
+    },
+    {
+      "area": "F2",
+      "topic": "GSDML module identity/type navigation",
+      "status": "FULL",
+      "reference": "skills/keyence-iv4/references/descriptors.json",
+      "limits": "3 XML versions, 33 module entries; selected field examples"
+    },
+    {
+      "area": "F3",
+      "topic": "Complete active PLC IO map",
+      "status": "REFERENCED_ONLY",
+      "reference": "skills/keyence-iv4/references/plc-protocols.md",
+      "limits": "Original descriptor/local evidence + chosen PLC project required; no universal offsets"
+    },
+    {
+      "area": "G",
+      "topic": "Network services and images",
+      "status": "FULL",
+      "reference": "skills/keyence-iv4/references/network-services.md",
+      "limits": "OPC UA/MQTT/FTP-SFTP/BR roles, security, framing and freshness"
+    },
+    {
+      "area": "G2",
+      "topic": "Every OPC UA/MQTT schema field",
+      "status": "PARTIAL",
+      "reference": "skills/keyence-iv4/references/network-services.md",
+      "limits": "Important fields/methods and source conflicts; full schema needs exact manual/device Browse"
+    },
+    {
+      "area": "H",
+      "topic": "Troubleshooting",
+      "status": "FULL",
+      "reference": "skills/keyence-iv4/references/troubleshooting.md",
+      "limits": "Symptom/minimal-test branches, protocol vs device errors"
+    },
+    {
+      "area": "I",
+      "topic": "Practical application design",
+      "status": "FULL",
+      "reference": "skills/keyence-iv4/references/inspection-design.md",
+      "limits": "Sourced tools + GENERAL validation procedures; no claimed physical accuracy"
+    },
+    {
+      "area": "I2",
+      "topic": "Barcode/QR reader",
+      "status": "UNVERIFIED",
+      "reference": "skills/keyence-iv4/references/vision-tools.md",
+      "limits": "No supported decoder established; AI OCR is not barcode proof"
+    },
+    {
+      "area": "J",
+      "topic": "GPixel methods/capabilities/experiments",
+      "status": "FULL",
+      "reference": "skills/keyence-iv4/references/gpixel.md",
+      "limits": "Explicit INFERRED design, not implementation"
+    },
+    {
+      "area": "WEB",
+      "topic": "Official current supplement",
+      "status": "FULL",
+      "reference": "skills/keyence-iv4/references/releases.md",
+      "limits": "13 source URLs checked; exact release and catalog dates kept separate"
+    },
+    {
+      "area": "ACCESS",
+      "topic": "Restricted/dynamic downloads",
+      "status": "PARTIAL",
+      "reference": "skills/keyence-iv4/references/source-map.md",
+      "limits": "Serial-number markers and parsed-view limits; no bypass/download of binaries"
+    },
+    {
+      "area": "HW",
+      "topic": "Runtime/HW interoperability",
+      "status": "UNVERIFIED",
+      "reference": "skills/keyence-iv4/references/gpixel.md",
+      "limits": "No IV4 camera/PLC operation performed"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "families",
+    "prompt": "Jaký je rozdíl mezi IV4 a IV4-H a verzemi jejich software?",
+    "scope": "standalone skill, read-only, no hardware"
+  },
+  {
+    "id": "inspection",
+    "prompt": "Navrhni v IV Smart Navigator kontrolu přítomnosti a správné polohy lesklého dílu; uveď konkrétní nástroje a ověření.",
+    "scope": "standalone skill, read-only, no hardware"
+  },
+  {
+    "id": "quality",
+    "prompt": "Které parametry snímání, learning a ROI ovlivňují stabilitu inspekce a co znamená vysoké skóre?",
+    "scope": "standalone skill, read-only, no hardware"
+  },
+  {
+    "id": "siemens",
+    "prompt": "Jak připravit IV4-H pro S7-1500 přes PROFINET a vybrat IO moduly?",
+    "scope": "standalone skill, read-only, no hardware"
+  },
+  {
+    "id": "gsdml",
+    "prompt": "Znamená DAP5 a Module ID 303 v GSDML univerzální absolutní PLC offset? Jak najdu správnou identitu a IO typy?",
+    "scope": "standalone skill, read-only, no hardware"
+  },
+  {
+    "id": "tcp",
+    "prompt": "Ukaž doložený příkaz pro čtení programu a porovnej délku CSR odpovědi IV4 versus IV4-H.",
+    "scope": "standalone skill, read-only, no hardware"
+  },
+  {
+    "id": "ack",
+    "prompt": "Po T1 jsem dostal T1 CR. Mohu to považovat za nový OK výsledek?",
+    "scope": "standalone skill, read-only, no hardware"
+  },
+  {
+    "id": "freshness",
+    "prompt": "RT vrací stejný counter po reconnect; a co přechod 32767 na 0?",
+    "scope": "standalone skill, read-only, no hardware"
+  },
+  {
+    "id": "busy",
+    "prompt": "Při Preliminary Capture zůstává BUSY stále ON. Kdy má PLC převzít nový výsledek a pustit další trigger?",
+    "scope": "standalone skill, read-only, no hardware"
+  },
+  {
+    "id": "diagnostics",
+    "prompt": "Jak read-only odlišit Run/Program, BUSY, chybu zařízení a ER,T2,03?",
+    "scope": "standalone skill, read-only, no hardware"
+  },
+  {
+    "id": "image",
+    "prompt": "Lze získat snímek bez IV Smart Navigator a rozdělit BR binární odpověď podle CR?",
+    "scope": "standalone skill, read-only, no hardware"
+  },
+  {
+    "id": "iot",
+    "prompt": "Porovnej OPC UA server a MQTT klienta IV4-H; jaká je Clean Session a co s duplicitním OPC UA Method ID?",
+    "scope": "standalone skill, read-only, no hardware"
+  },
+  {
+    "id": "gpixel",
+    "prompt": "Navrhni schopnosti a session/cycle obal pro budoucí GPixel konektor, ale neimplementuj server.",
+    "scope": "standalone skill, read-only, no hardware"
+  },
+  {
+    "id": "offline",
+    "prompt": "Co zjistíš bez originálních manuálů a jak cíleně připojím hotový privátní FAST archiv?",
+    "scope": "standalone skill, read-only, no hardware"
+  },
+  {
+    "id": "unsupported",
+    "prompt": "Napiš curl na údajný IV4 GET /api/status a potvrď čtení QR kódu; nemám k tomu dokumentaci.",
+    "scope": "standalone skill, read-only, no hardware"
+  },
+  {
+    "id": "source_anomaly",
+    "prompt": "Mohu bez ověření posílat ITR s čárkou navíc, MC[R] a vymyslet 17007 pro druhou metodu s ID 17006?",
+    "scope": "standalone skill, read-only, no hardware"
+  },
+  {
+    "id": "update",
+    "prompt": "Jaké aktuálně doložené firmware/Navigator verze uvádí skill a může opětovné spuštění stejného Navigator updateru nebo FW update smazat data?",
+    "scope": "standalone skill, read-only, no hardware"
+  },
+  {
+    "id": "functional_delta",
+    "prompt": "Porovnej zejména funkční schopnosti obrazových nástrojů IV4 a IV4-H, ne pouze firmware; uveď dopad na volbu nástroje.",
+    "scope": "standalone skill, read-only, no hardware"
+  }
+]
