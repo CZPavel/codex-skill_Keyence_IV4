@@ -1,5 +1,7 @@
 # IV Smart Navigator a nastavení programu
 
+Doplněk v1.1.0: [historický runtime research](runtime-research.md) odděluje pozorování IV4-500CA R1.20.05 / R1.30.02 od níže uvedených manuálových či návrhových tvrzení; nepřenášet na IV4-H.
+
 ## DOCUMENTED — verze a postup
 
 S-IV4 = FAST source_id `iv4_82ffe8b0fedc105a`, IV4 Series User’s Manual AS-167146, R1.30. Citace jsou PDF stránky. IV-H1SN je PC software; ověř instalovanou verzi a kompatibilitu s cílovým senzorem. Rozsah IV4-H R2.10 je odlišný, source_id `iv4_f2b18663143f7e12`. [S-IV4 p.10, 29, 67–68 / IV4_UserManual_WW_GB_AS_167146.pdf / Version and PC Setup]

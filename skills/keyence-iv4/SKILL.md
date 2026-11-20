@@ -21,12 +21,13 @@ Odpovídej primárně česky s originálními názvy UI/parametrů. Skill obsahu
 | OPC UA, MQTT, FTP/SFTP, obraz | [network services](references/network-services.md) |
 | BUSY, chyba, nespolehlivý výsledek | [troubleshooting](references/troubleshooting.md) |
 | Budoucí konektor a experimenty | [GPixel design proposal](references/gpixel.md), [pracovní postupy](references/workflows.md) |
+| Historické HW pokusy, OCR recognized/master, FW rozdíly | [runtime research](references/runtime-research.md), [strojový runtime registr](references/runtime-observations.json) |
 | Původ tvrzení / chybějící archiv | [source map](references/source-map.md), [sources.json](references/sources.json) |
 
 ## Rozhodování a důkaz
 
 1. Rozliš model smart camera / compact head + amplifier, rodinu IV4/IV4-H, sensor firmware, Navigator/panel software, program/režim a komunikační jednotku. Datum KB není verze výrobku. Při porovnání řad vysvětli konkrétní doložené funkční rozdíly a jejich dopad, nezůstaň jen u odlišných názvů/verzí. Rozdíly nevyvozuj z podobnosti s KEYENCE VS ani z pouhé přítomnosti názvu v lineup katalogu.
-2. Používej `DOCUMENTED`, `DESCRIPTOR_ONLY`, `VERIFIED_RUNTIME`, `GENERAL`, `INFERRED`, `UNVERIFIED`. V tomto vydání neexistuje důkaz `VERIFIED_RUNTIME` kamery. FAST/OCR či passing unit test nepovyšuj na technické/HW potvrzení. Detailně popiš omezení chybějícího důkazu.
+2. Používej `DOCUMENTED`, `DESCRIPTOR_ONLY`, `VERIFIED_RUNTIME`, `GENERAL`, `INFERRED`, `UNVERIFIED`. Historická omezená pozorování IV4-500CA R1.20.05 a R1.30.02 jsou oddělena v [runtime research](references/runtime-research.md); neplatí automaticky pro IV4-H ani současný stav zařízení. FAST/OCR či passing unit test nepovyšuj na technické/HW potvrzení. Detailně popiš omezení chybějícího důkazu.
 3. Pro technické tvrzení cituj původní filename, PDF stranu, kapitolu a FAST source_id z registru. Web cituj otevřenou oficiální URL a datum/verzi. U nejasných tabulek čti sousední stránku a odpovídající model; pole s rozpornou délkou či NodeId ponech k ověření.
 4. Pro komunikaci postupuj `SOURCE LOOKUP → CAPABILITY → WIRE CONTRACT → DESIGN → OFFLINE TEST → RUNTIME VALIDATION`. Nedoplňuj názvy endpointů, příkazů, SDK metod, timeouty ani univerzální offsety podle zkušenosti.
 5. Diagnostika: `SYMPTOM → HYPOTHESES → MINIMAL TEST → OBSERVATION → NEXT ACTION`. Přijetí T1 není hotová inspekce, Trigger Ready není platnost výsledku, ACK neprokazuje změnu existujícího nástroje. Preliminary Capture/2-image Buffer fyzického I/O používá Ready + Strobe; nepoužívej univerzálně BUSY OFF jako platný nový výsledek.
@@ -41,6 +42,8 @@ Spouštěj z tohoto skill adresáře, Python 3.11+ standard library:
 ```powershell
 python scripts/lookup.py --status
 python scripts/lookup.py --query "AI OCR" --limit 3
+python scripts/lookup.py --query OCR --firmware R1.30.02 --limit 3
+python scripts/lookup.py --id RT-IV4-R13002-OCR --max-chars 5000
 python scripts/lookup.py --command CSR --family IV4-H --max-chars 5000
 python scripts/lookup.py --id S-IV4-H
 python scripts/lookup.py --descriptor DAP5 --limit 3

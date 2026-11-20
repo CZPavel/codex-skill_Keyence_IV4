@@ -15,7 +15,7 @@ Veřejný skill je nové odborné zpracování. Neobsahuje původní PDF, plný 
 
 - DOCUMENTED: konkrétní oficiální dokument, model a verze; stále bez runtime důkazu.
 - DESCRIPTOR_ONLY: statická konfigurace a zdrojový lokátor; žádná aktivní mapa či potvrzení importu.
-- VERIFIED_RUNTIME: jen skutečný pokus s identitou modelu/FW, vstupem a výstupem; toto vydání žádný takový IV4 důkaz nepřináší.
+- VERIFIED_RUNTIME: jen skutečný pokus s identitou modelu/FW, vstupem a výstupem; historické omezené záznamy jsou v [runtime research](runtime-research.md) a samostatném registru; nejde o IV4-H ani produkční přejímku.
 - GENERAL: obecný návrhový princip, nikoli schopnost senzoru.
 - INFERRED: výslovný úsudek nebo navržená architektura.
 - UNVERIFIED: chybějící, rozporný či nepřístupný důkaz.

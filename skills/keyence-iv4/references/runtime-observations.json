@@ -1,0 +1,324 @@
+{
+  "schema_version": 1,
+  "scope": "Sanitized historical bounded lab observations; no live connection, client or production acceptance",
+  "historical": true,
+  "production_accepted": false,
+  "manual_registry_policy": "commands/capabilities/sources retain original documentation classifications and provenance; observations are independent evidence",
+  "observations": [
+    {
+      "id": "RT-IV4-R12005-TCP",
+      "family": "IV4",
+      "model": "IV4-500CA",
+      "firmware": "R1.20.05",
+      "navigator_version": "2.10.01.0",
+      "observed_on": "2026-11-18",
+      "evidence_category": "VERIFIED_RUNTIME",
+      "title": "TCP identity, status, T1/T2, OF and ITR",
+      "observed": [
+        "VI/RM/PR/PNR verified; SR/RER/WR/CSR in Run. CSR five digits; PNR field 48 bytes with NUL padding.",
+        "Fourteen triggers on a program copy: 13 T2 and one T1. T1 ACK preceded the new RT result. OF,01 detailed response retained padding.",
+        "ITR,1 and ITR,1, both returned ER02. Program SR/RER/WR/CSR/BR0/RT returned ER03; VI,1 ER22."
+      ],
+      "documented_context": "IV4 R1.30 manual iv4_82ffe8b0fedc105a PDF 426-446 is newer than this runtime.",
+      "limitations": [
+        "No physical NG, OCR recognition, Through Count, rollover hardware test or production takt acceptance in V1.",
+        "Do not interpret VI as unique physical identity; Navigator version differs from sensor firmware."
+      ],
+      "source_locators": [
+        "IV4_RESEARCH/docs/PROTOCOL_SPEC.md",
+        "IV4_RESEARCH/docs/TECHNICAL_REPORT.md"
+      ]
+    },
+    {
+      "id": "RT-IV4-R12005-BR",
+      "family": "IV4",
+      "model": "IV4-500CA",
+      "firmware": "R1.20.05",
+      "navigator_version": "2.10.01.0",
+      "observed_on": "2026-11-18",
+      "evidence_category": "VERIFIED_RUNTIME",
+      "title": "BR binary framing and separate image/result counters",
+      "observed": [
+        "Observed BR uppercase, 22-byte header: BR, + 10 ASCII trigger digits + comma + 7 ASCII length digits + comma; exactly payload bytes, no final CR in samples.",
+        "BMP BR0 1280x960 / 3686454 bytes; BR1 640x480 / 921654 bytes. RT/BR counter pairs included 27/1, 38/12, 40/14.",
+        "Reconnect VI/PR succeeded after one deliberately interrupted BR transfer."
+      ],
+      "documented_context": "",
+      "limitations": [
+        "No global counter conversion or atomic part/result/image association; do not CR-split binary payload.",
+        "Limited reconnect sample is not recovery robustness or streaming FPS evidence."
+      ],
+      "source_locators": [
+        "IV4_RESEARCH/docs/PROTOCOL_SPEC.md",
+        "IV4_RESEARCH/docs/RESULT_COUNTER_REVIEW.md"
+      ]
+    },
+    {
+      "id": "RT-IV4-R12005-SESSION-RESTORE",
+      "family": "IV4",
+      "model": "IV4-500CA",
+      "firmware": "R1.20.05",
+      "navigator_version": "2.10.01.0",
+      "observed_on": "2026-11-18",
+      "evidence_category": "VERIFIED_RUNTIME",
+      "title": "TCP ownership and Navigator-assisted individual restore",
+      "observed": [
+        "Second TCP session displaced first (EOF); second continued. Navigator on a separate connection coexisted.",
+        "GUI individual .iv4a restore of a copied program restored its name; re-export differed in six bytes outside name."
+      ],
+      "documented_context": "",
+      "limitations": [
+        "Single socket owner and serial queue are design recommendations, not a universal session limit.",
+        "No bit-identical/full sensor restore; .iv4p is not established as configuration backup."
+      ],
+      "source_locators": [
+        "IV4_RESEARCH/docs/STARTUP_AND_CONNECTIONS.md",
+        "IV4_RESEARCH/docs/RESTORATION.md"
+      ]
+    },
+    {
+      "id": "RT-IV4-R13002-STATUS",
+      "family": "IV4",
+      "model": "IV4-500CA",
+      "firmware": "R1.30.02",
+      "navigator_version": "2.10.01.0",
+      "observed_on": "2026-11-19/20",
+      "evidence_category": "VERIFIED_RUNTIME",
+      "title": "TP STR SDR RFC TR and mode-dependent monitoring",
+      "observed": [
+        "Program: VI/RM/PR/PNR/TP/TR responded; SR/RER/WR/CSR/STR/SDR/RFC returned ER03.",
+        "Run before first trigger: TP 47.8 degC, SDR 00000 with no SD recognized, RFC 0; STR ER03. After four cycles STR max/min/average 385 ms and triggers/OK 4, NG/errors 0.",
+        "PNR fixed field 48 bytes with NUL padding; PNR,1 variable length. TR local clock is not verified UTC."
+      ],
+      "documented_context": "TP/STR/SDR/RFC/TR are documented in IV4 manual, not inferred from IV4-H.",
+      "limitations": [
+        "SDR zero is not percent free and no-card test does not validate live SD capacity.",
+        "No saturation/reset/power-cycle statistics test; seven SR fields need model/manual interpretation."
+      ],
+      "source_locators": [
+        "IV4_RESEARCH_V2/docs/RUNTIME_LOG.md",
+        "IV4_RESEARCH_V2/evidence/monitor_program.jsonl",
+        "IV4_RESEARCH_V2/evidence/monitor_run_before_trigger.jsonl",
+        "IV4_RESEARCH_V2/evidence/monitor_run_after4.jsonl"
+      ]
+    },
+    {
+      "id": "RT-IV4-R13002-TCP",
+      "family": "IV4",
+      "model": "IV4-500CA",
+      "firmware": "R1.30.02",
+      "navigator_version": "2.10.01.0",
+      "observed_on": "2026-11-19/20",
+      "evidence_category": "VERIFIED_RUNTIME",
+      "title": "Controlled TCP inspection, image and ITR firmware delta",
+      "observed": [
+        "Three T2 and one T1 gave four OK; immediate RT after T1 remained 3, later 4.",
+        "BR0 and BR1 returned BMP full/half size; BR/RT both 4 in this sample.",
+        "ITR,1 returned 64 spaces on AI Count and AI OCR; ITR,1, returned ER22; VI,1 returned ER22."
+      ],
+      "documented_context": "",
+      "limitations": [
+        "ITR spaces are not recognized OCR text. Older R1.20.05 returned ER02 for both ITR variants.",
+        "Matching BR/RT counters in one sequence do not establish atomic pairing.",
+        "All six outputs were configured OFF; electrical levels were not measured."
+      ],
+      "source_locators": [
+        "IV4_RESEARCH_V2/docs/RUNTIME_LOG.md",
+        "IV4_RESEARCH_V2/docs/OCR_RUNTIME.md",
+        "IV4_RESEARCH_V2/evidence/controlled_run01.jsonl"
+      ]
+    },
+    {
+      "id": "RT-IV4-R13002-WRITES",
+      "family": "IV4",
+      "model": "IV4-500CA",
+      "firmware": "R1.30.02",
+      "navigator_version": "2.10.01.0",
+      "observed_on": "2026-11-19/20",
+      "evidence_category": "VERIFIED_RUNTIME",
+      "title": "PW PNW DW with independent readback",
+      "observed": [
+        "PNW changed a copied program name, PNR readback confirmed it.",
+        "DW changed AI Count lower/upper thresholds from 1/1 to 2/2; DR confirmed. Two NG arose over the same image; limits were restored via DW/DR.",
+        "PW program switching is recorded with PR readback in the controlled test sequences."
+      ],
+      "documented_context": "PW/PNW/DW formats and persistence constraints: iv4_82ffe8b0fedc105a PDF 430-431.",
+      "limitations": [
+        "Threshold-induced NG is not a physically faulty part.",
+        "ACK is not general configuration verification; after timeout outcome can be unknown and mutations must not be blindly retried.",
+        "No full tool editor, autonomous catalog/export or startup persistence proof."
+      ],
+      "source_locators": [
+        "IV4_RESEARCH_V2/docs/RUNTIME_LOG.md",
+        "IV4_RESEARCH_V2/docs/CAPABILITY_MATRIX.md",
+        "IV4_RESEARCH_V2/evidence/pnw_test.json",
+        "IV4_RESEARCH_V2/evidence/dw_upper2.json",
+        "IV4_RESEARCH_V2/evidence/dw_lower2.json",
+        "IV4_RESEARCH_V2/evidence/pw_to002.json",
+        "IV4_RESEARCH_V2/evidence/pw_back001.json"
+      ]
+    },
+    {
+      "id": "RT-IV4-R13002-OPCUA",
+      "family": "IV4",
+      "model": "IV4-500CA",
+      "firmware": "R1.30.02",
+      "navigator_version": "2.10.01.0",
+      "observed_on": "2026-11-19/20",
+      "evidence_category": "VERIFIED_RUNTIME",
+      "title": "Typed OPC UA metadata, notifications and methods",
+      "observed": [
+        "Namespace URI urn:KEYENCE:VisionSensor:IV4:OPCUaServer; observed index 2 must be resolved by URI each session.",
+        "MachineStatus i=16001 datatype i=3100; MachineInformation i=16002 datatype i=3101; OperationResult i=16500 datatype i=3110. Values CurrentRead; not CurrentWrite in observed session.",
+        "Typed decoding worked after registering enum/structure types with asyncua 2.1.0. Four new results 1-4 notified at 100 ms sampling.",
+        "RequestTrigger and ChangeThreshold returned [true,0]; subsequent ResultNo 7 / OK and DR readback supported effects. SwitchProgram P001 -> P002 -> P001 returned [true,0], delayed UA readback about 378/372 ms and TCP PR confirmed."
+      ],
+      "documented_context": "Standard IV4 iv4_82ffe8b0fedc105a PDF 410-415; six methods 17001-17006, not inferred H seventh method.",
+      "limitations": [
+        "None/Anonymous is observed lab configuration, not production authorization.",
+        "OperationResult thresholds can remain those of the previous inspection; method success is not immediate configuration readback.",
+        "No lossless notification or high-load guarantee, no write permission inferred from readable nodes or method browse.",
+        "IV4-H duplicate method ID/checksum type anomalies remain unresolved by this standard IV4 runtime."
+      ],
+      "source_locators": [
+        "IV4_RESEARCH_V2/docs/OPCUA_RUNTIME.md",
+        "IV4_RESEARCH_V2/docs/RUNTIME_LOG.md",
+        "IV4_RESEARCH_V2/evidence/ua_switch_readback.json",
+        "IV4_RESEARCH_V2/evidence/ua_methods.jsonl"
+      ]
+    },
+    {
+      "id": "RT-IV4-R13002-MQTT",
+      "family": "IV4",
+      "model": "IV4-500CA",
+      "firmware": "R1.30.02",
+      "navigator_version": "2.10.01.0",
+      "observed_on": "2026-11-19/20",
+      "evidence_category": "VERIFIED_RUNTIME",
+      "title": "MQTT raw shape, QoS, action readback and retained boundaries",
+      "observed": [
+        "Four results 8-11 corresponded to controlled TCP cycles. ResultLogic is an object with ResultLogic1..8; ExtendedData entries are objects with Data.",
+        "Two camera PUBLISH frames observed QoS 1 and retain false; subscriber metadata reporting QoS 2 is not sensor publish evidence.",
+        "Trigger action broker ACK alone was outcome_unknown; later TCP RT12/result12 supported effect. Switch actions had later independent PR P002/P001 readback.",
+        "New subscriber saw duplicate retained Online connection and no result with result retain disabled. One broker restart sequence later yielded RT13/NG."
+      ],
+      "documented_context": "",
+      "limitations": [
+        "Limited PCAP stopped at size limit, not entire sequence. Duplicate origin unknown.",
+        "Broker ACK, QoS2, retained Online and one reconnect do not prove exactly-once execution, fresh inspection, recovery replay or lossless collection.",
+        "No IV4 ResultImage field demonstrated; do not import IV4-H MQTT image schema."
+      ],
+      "source_locators": [
+        "IV4_RESEARCH_V2/docs/MQTT_RUNTIME.md",
+        "IV4_RESEARCH_V2/evidence/mqtt_session02/messages.jsonl",
+        "IV4_RESEARCH_V2/evidence/mqtt_new_subscriber.json"
+      ]
+    },
+    {
+      "id": "RT-IV4-R13002-OCR",
+      "family": "IV4",
+      "model": "IV4-500CA",
+      "firmware": "R1.30.02",
+      "navigator_version": "2.10.01.0",
+      "observed_on": "2026-11-19/20",
+      "evidence_category": "VERIFIED_RUNTIME",
+      "title": "AI OCR recognized text differs from master; score is not confidence",
+      "observed": [
+        "Master CR was 722336. Three T2 on P002 gave 15-17 OK with detailed RT and MQTT AI_OCR ReadString 722336.",
+        "With physical covering leaving 7223, five controlled cycles 19-23 were NG; CR stayed 722336; OCR recognized 7223 and comparison score was 0. Position Adjustment stayed OK with score 90-91.",
+        "TCP detailed, first four MQTT NG payloads, FTP TXT, and fifth-cycle typed OPC UA Good notification each documented recognized text in their respective cycles.",
+        "One ASCII detailed response was 175 bytes, OCR block 110 bytes: 14-byte prefix + 96-byte text. ITR,1 returned spaces, not OCR."
+      ],
+      "documented_context": "",
+      "limitations": [
+        "Score 0 is not zero OCR confidence. CR is master text, not recognized result.",
+        "One motif and five NG cycles do not prove accuracy/robustness or multibyte encoding/stride across all variants.",
+        "Protocols were selected in different cycles; not simultaneous proof of OPC UA and MQTT. No general atomic image/result association."
+      ],
+      "source_locators": [
+        "IV4_RESEARCH_V2/docs/OCR_RUNTIME.md",
+        "IV4_RESEARCH_V2/docs/FTP_AND_RESTORE.md",
+        "IV4_RESEARCH_V2/evidence/ocr_covered_7223_01.jsonl",
+        "IV4_RESEARCH_V2/evidence/ua_ocr_covered/subscription.json",
+        "IV4_RESEARCH_V2/evidence/covered_run_manifest.json"
+      ]
+    },
+    {
+      "id": "RT-IV4-R13002-FTP",
+      "family": "IV4",
+      "model": "IV4-500CA",
+      "firmware": "R1.30.02",
+      "navigator_version": "2.10.01.0",
+      "observed_on": "2026-11-19/20",
+      "evidence_category": "VERIFIED_RUNTIME",
+      "title": "FTP received files, incomplete transfer despite RFC and no error",
+      "observed": [
+        "One cycle delivered BMP, IV4P and UTF-16LE BOM/tab-separated TXT; TXT included recognized OCR. Separate FTP/BR BMPs matched bytes in two controlled single-cycle comparisons.",
+        "First three later NG cycles completed only 8/9 expected files; one BMP was zero bytes/incomplete. RFC increased 1 -> 4 while RER/WR were 000.",
+        "A later single cycle completed 3/3."
+      ],
+      "documented_context": "Manual RFC counts completed configured transfer groups, not individual files/backlog; runtime receiver evidence is an independent completeness check.",
+      "limitations": [
+        "RFC is not server receipt of every file; no-error is not completeness. Cause unresolved, do not assign camera fault.",
+        "Track per-file completion and incomplete groups; no lossless/atomic pairing or recovery guarantee.",
+        "FTP only: SFTP, backlog/retry/overwrite behavior and production throughput unverified; IV4P is not full configuration backup."
+      ],
+      "source_locators": [
+        "IV4_RESEARCH_V2/docs/FTP_AND_RESTORE.md",
+        "IV4_RESEARCH_V2/evidence/ftp_covered01/completed.jsonl",
+        "IV4_RESEARCH_V2/evidence/covered_complete_readback.jsonl"
+      ]
+    },
+    {
+      "id": "RT-IV4-R13002-TIME-SESSION",
+      "family": "IV4",
+      "model": "IV4-500CA",
+      "firmware": "R1.30.02",
+      "navigator_version": "2.10.01.0",
+      "observed_on": "2026-11-19/20",
+      "evidence_category": "VERIFIED_RUNTIME",
+      "title": "Freshness, source time and single TCP owner",
+      "observed": [
+        "UA SourceTimestamp was about one hour ahead of host; MQTT ImagingTime also differed and used colon before milliseconds.",
+        "Second TCP session displaced first (EOF) in a bounded test. Research adapter smoke observed transport error, stale cache and fresh VI after reconnect."
+      ],
+      "documented_context": "",
+      "limitations": [
+        "Retain raw time and host receive time separately; no verified UTC/exposure timestamp.",
+        "One socket owner/serialized queue is an integration design inference. No full Fleet integration or concurrency/recovery acceptance."
+      ],
+      "source_locators": [
+        "IV4_RESEARCH_V2/docs/OPCUA_RUNTIME.md",
+        "IV4_RESEARCH_V2/docs/MQTT_RUNTIME.md",
+        "IV4_RESEARCH_V2/evidence/two_sessions.json",
+        "IV4_RESEARCH_V2/evidence/adapter_hw_smoke.json"
+      ]
+    },
+    {
+      "id": "RT-IV4-R13002-GUI",
+      "family": "IV4",
+      "model": "IV4-500CA",
+      "firmware": "R1.30.02",
+      "navigator_version": "2.10.01.0",
+      "observed_on": "2026-11-19/20",
+      "evidence_category": "GUI_ASSISTED",
+      "title": "Navigator IoT selector and individual OCR restore",
+      "observed": [
+        "IoT selector presented one choice Disable / OPC UA / MQTT. Recorded tests switched between OPC UA and MQTT, not simultaneous operation.",
+        "Navigator exported individual P002 .iv4a, imported into empty P003; subsequent T2 RT18 OK with recognized/master 722336."
+      ],
+      "documented_context": "",
+      "limitations": [
+        "Single-select UI is verified; global impossibility of parallel protocols on every model/FW is not established.",
+        "GUI_ASSISTED export/import is not autonomous public API. One inspection after import is not complete sensor restore, physical I/O or production acceptance.",
+        "Historical final-state documentation is not present device state."
+      ],
+      "source_locators": [
+        "IV4_RESEARCH_V2/docs/RUNTIME_LOG.md",
+        "IV4_RESEARCH_V2/docs/FTP_AND_RESTORE.md",
+        "IV4_RESEARCH_V2/docs/FINAL_STATE.md",
+        "IV4_RESEARCH_V2/evidence/iot_protocol_choices.txt"
+      ]
+    }
+  ]
+}

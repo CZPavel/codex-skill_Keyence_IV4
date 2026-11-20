@@ -1,5 +1,7 @@
 # Síťové služby, monitoring a obrazová data
 
+Doplněk v1.1.0: [historický runtime research](runtime-research.md) odděluje pozorování IV4-500CA R1.20.05 / R1.30.02 od níže uvedených manuálových či návrhových tvrzení; nepřenášet na IV4-H.
+
 DOCUMENTED zdroje: S-IV4 / IV4_UserManual_WW_GB_AS_167146.pdf (`iv4_82ffe8b0fedc105a`) p.282–295, 398–425; S-IV4-H / IV4_UserManual_WW_GB_AS_170071.pdf (`iv4_f2b18663143f7e12`) p.314–331, 474–501. Podle rodiny vybírej i požadovanou verzi sensor/panel/Navigator. Síťová služba není univerzální vzdálené správní API.
 
 ## OPC UA server

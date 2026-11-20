@@ -1,8 +1,10 @@
 {
   "name": "keyence-iv4",
-  "version": "1.0.0",
-  "knowledge_reviewed_on": "2026-11-13",
+  "version": "1.1.0",
+  "knowledge_reviewed_on": "2026-11-20",
   "minimum_python": "3.11",
   "distribution": "public independent synthesis; optional private evidence",
-  "hardware_verified": false
+  "hardware_verified": true,
+  "hardware_verification_scope": "Historical bounded IV4-500CA R1.20.05 and R1.30.02 only; IV4-H and production acceptance unverified",
+  "production_accepted": false
 }

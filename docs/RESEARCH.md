@@ -7,3 +7,7 @@ Nové oproti čistému lokálnímu source indexu: přesná R2.10.01 release data
 Parsed-view limit: přehled manuálů a některé PLC vendor sekce mají prázdné seznamy. Neměnit to na tvrzení, že dokument neexistuje. Software downloady se značkou vyžadují serial number; konkrétní binární dostupnost za přihlášením zůstává neověřená. Nebyly nalezeny důvěryhodnější otevřené důkazy pro obecné REST/QR/runtime tvrzení, proto jejich existence zůstává UNVERIFIED.
 
 Referenční VS skill byl použit pro organizační principy, source lookup a bezpečnou instalaci, nikoliv pro funkce IV4. Původní IV4 pluginové instrukce byly pouze routing/reference pattern; nebyla převzata domnělá runtime implementace nebo v nich jmenované soubory bez existence. Úplná FAST extrakce nebyla opakována.
+
+## Historický runtime doplněk v1.1.0
+
+Konsolidace 2026-11-20 čerpá z uložených IV4_RESEARCH a IV4_RESEARCH_V2. [Runtime reference](../skills/keyence-iv4/references/runtime-research.md) a registry rozlišují přesný firmware a limity. Žádný vendor manuál, FAST dump či raw privátní experiment nebyl přibalen; aktuální hardware nebyl připojován.

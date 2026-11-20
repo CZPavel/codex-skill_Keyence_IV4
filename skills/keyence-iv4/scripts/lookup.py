@@ -123,6 +123,29 @@ def registry_records(refs):
             yield item
 
 
+def runtime_records(refs, folder=None):
+    """Independent observations; never merge documentation classifications or private source roots."""
+    seen = set()
+    for data, key in ((load(refs / 'runtime-observations.json', {}), 'observations'),
+                      (load(folder / 'IV4_RESEARCH_FACTS.json', {}) if folder else {}, 'facts')):
+        for item in data.get(key, []):
+            ident = item.get('id')
+            if ident and ident not in seen:
+                seen.add(ident)
+                # Optional private registry contains a separate sources[] catalog with local_root.
+                # Return only logical locators and fact fields, never that catalog.
+                yield {k: v for k, v in item.items() if k in (
+                    'id', 'family', 'model', 'firmware', 'navigator_version', 'observed_on',
+                    'evidence_category', 'title', 'observed', 'documented_context', 'limitations',
+                    'statement', 'source_locators')}
+
+
+def firmware_matches(item, firmware):
+    value = item.get('firmware', '')
+    versions = value if isinstance(value, list) else [value]
+    return not firmware or firmware.casefold() in [str(v).casefold() for v in versions]
+
+
 def bounded_record(item, maximum):
     raw = json.dumps(item, ensure_ascii=False)
     return item if len(raw) <= maximum else {'id': item.get('id'), **excerpt(raw, maximum)}
@@ -147,7 +170,7 @@ def public_page(refs, source, page, limit, maximum):
 
 
 def lookup(*, skill=SKILL, corpus=None, query=None, address=None, command=None, descriptor=None,
-           status=False, literal=False, limit=10, family=None, neighbors=0, maximum=2500, include_evidence=False):
+           status=False, literal=False, limit=10, family=None, firmware=None, neighbors=0, maximum=2500, include_evidence=False):
     if not 1 <= limit <= 100 or not 1 <= maximum <= 10000 or not 0 <= neighbors <= 20:
         raise ValueError('limit 1..100, max-chars 1..10000, neighbors 0..20')
     skill = Path(skill)
@@ -157,7 +180,11 @@ def lookup(*, skill=SKILL, corpus=None, query=None, address=None, command=None, 
     if status:
         return {'mode': 'standalone+corpus' if folder else 'standalone', 'corpus_available': bool(folder),
                 'references': len(list(refs.glob('*.md'))), 'commands': len(commands),
-                'capabilities_available': (refs / 'capabilities.json').is_file()}
+                'capabilities_available': (refs / 'capabilities.json').is_file(),
+                'runtime_observations': len(list(runtime_records(refs))),
+                'corpus_research_available': bool(folder and (folder / 'IV4_RESEARCH_FACTS.json').is_file())}
+    if firmware and (command is not None or descriptor is not None):
+        raise ValueError('--firmware applies to runtime --query/--id; command/descriptor are documentation records')
     if command is not None:
         token = command.strip().casefold()
         results = [x for x in commands if str(x.get('code', '')).strip().casefold() == token and family_matches(x, family)]
@@ -178,6 +205,15 @@ def lookup(*, skill=SKILL, corpus=None, query=None, address=None, command=None, 
                 break
         return {'results': found, 'corpus_available': bool(folder)}
     if address:
+        for item in runtime_records(refs, folder):
+            if str(item.get('id', '')).casefold() == address.casefold():
+                if not firmware_matches(item, firmware) or not family_matches(item, family):
+                    raise ValueError('Runtime ID does not match requested family/firmware')
+                return {'id': item['id'], 'model': item.get('model'), 'firmware': item.get('firmware'),
+                        'evidence_category': item.get('evidence_category'), 'record': bounded_record(item, maximum),
+                        'historical': True, 'production_accepted': False}
+        if firmware:
+            raise ValueError('--firmware requires a runtime observation ID')
         allrefs = list(references(skill))
         for ident, content in allrefs:
             if ident.casefold() == address.casefold():
@@ -189,7 +225,7 @@ def lookup(*, skill=SKILL, corpus=None, query=None, address=None, command=None, 
                     return {'id': item['id'], **excerpt(raw, maximum)}
         match = re.fullmatch(r'(iv4_[0-9a-f]+)(?::p(\d+))?', address, re.I)
         if not match:
-            raise ValueError('Unknown ID; expected REF-... or iv4_<hash>[:pNNNN]')
+            raise ValueError('Unknown ID; expected runtime ID, REF-... or iv4_<hash>[:pNNNN]')
         source, page = match[1].lower(), int(match[2]) if match[2] else None
         index = load(folder / '00_KNOWLEDGE_INDEX.json', {}) if folder else load(refs / 'sources.json', {})
         meta = next((x for x in index.get('sources', []) if x.get('source_id', '').lower() == source), None)
@@ -223,6 +259,17 @@ def lookup(*, skill=SKILL, corpus=None, query=None, address=None, command=None, 
     if not terms:
         raise ValueError('Query contains no searchable terms; use --literal')
     results = []
+    for item in runtime_records(refs, folder):
+        content = json.dumps(item, ensure_ascii=False)
+        if (all(term in content.casefold() for term in terms)
+                and family_matches(item, family) and firmware_matches(item, firmware)):
+            results.append({'id': item['id'], 'evidence_category': item.get('evidence_category'),
+                            'model': item.get('model'), 'firmware': item.get('firmware'),
+                            'historical': True, **excerpt(content, maximum, terms[0])})
+            if len(results) == limit:
+                return {'results': results, 'corpus_available': bool(folder)}
+    if firmware:
+        return {'results': results, 'corpus_available': bool(folder)}
     for item in registry_records(refs):
         content = json.dumps(item, ensure_ascii=False)
         if all(term in content.casefold() for term in terms) and (not family or family_matches(item, family)):
@@ -252,6 +299,7 @@ def main():
     parser.add_argument('--corpus', default=os.getenv('KEYENCE_IV4_KB'))
     parser.add_argument('--literal', action='store_true')
     parser.add_argument('--family', choices=['IV4', 'IV4-H'])
+    parser.add_argument('--firmware', help='Exact firmware filter for historical runtime query/ID only')
     parser.add_argument('--limit', type=int, default=10)
     parser.add_argument('--neighbors', type=int, default=0)
     parser.add_argument('--max-chars', type=int, default=2500)
@@ -259,7 +307,7 @@ def main():
     a = parser.parse_args()
     try:
         result = lookup(corpus=a.corpus, query=a.query, address=a.id, command=a.command, descriptor=a.descriptor,
-                        status=a.status, literal=a.literal, limit=a.limit, family=a.family,
+                        status=a.status, literal=a.literal, limit=a.limit, family=a.family, firmware=a.firmware,
                         neighbors=a.neighbors, maximum=a.max_chars, include_evidence=a.evidence)
         print(json.dumps(result, ensure_ascii=False, indent=2))
     except (ValueError, OSError, json.JSONDecodeError) as exc:

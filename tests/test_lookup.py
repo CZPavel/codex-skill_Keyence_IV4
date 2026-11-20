@@ -57,6 +57,25 @@ class LookupTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             lookup.lookup(skill=self.skill, corpus=self.corpus / 'missing', status=True)
 
+    def test_optional_research_facts_are_not_pages_or_private_catalog(self):
+        refs = self.skill / 'references'
+        fact = {'id': 'RT-SHARED', 'family': 'IV4', 'firmware': 'R1.30.02',
+                'evidence_category': 'VERIFIED_RUNTIME', 'statement': 'recognized text differs master',
+                'source_locators': ['IV4_RESEARCH_V2/docs/OCR_RUNTIME.md']}
+        self.write(refs / 'runtime-observations.json', {'observations': [fact]})
+        self.write(self.corpus / 'knowledge/IV4_RESEARCH_FACTS.json',
+                   {'facts': [fact, {**fact, 'id': 'IV4-RESEARCH-OCR'}],
+                    'sources': [{'local_root': 'PRIVATE_HOST_ROOT'}]})
+        result = lookup.lookup(skill=self.skill, corpus=self.corpus, query='recognized', firmware='R1.30.02')
+        self.assertEqual([x['id'] for x in result['results']], ['RT-SHARED', 'IV4-RESEARCH-OCR'])
+        exact = lookup.lookup(skill=self.skill, corpus=self.corpus, address='IV4-RESEARCH-OCR')
+        self.assertEqual(exact['record']['firmware'], 'R1.30.02')
+        self.assertNotIn('PRIVATE_HOST_ROOT', json.dumps(exact))
+        self.assertNotIn('full_page_available', exact)
+        self.assertEqual(lookup.lookup(skill=self.skill, corpus=self.corpus, query='recognized', firmware='R1.20.05')['results'], [])
+        with self.assertRaises(ValueError):
+            lookup.lookup(skill=self.skill, address='RT-SHARED', family='IV4-H')
+
     def test_evidence_page_selection(self):
         doc = self.corpus / 'evidence/fast/documents/hash'
         doc.mkdir(parents=True)
@@ -73,6 +92,44 @@ class LookupTests(unittest.TestCase):
 
 
 class ActualRegistryIntegration(unittest.TestCase):
+    def test_runtime_firmware_boundaries_and_facts(self):
+        result = lookup.lookup(query='ITR', firmware='R1.20.05', maximum=10000)
+        self.assertTrue(result['results'])
+        self.assertTrue(all(x['firmware'] == 'R1.20.05' for x in result['results']))
+        self.assertIn('ER02', json.dumps(result))
+        newer = lookup.lookup(query='ITR', firmware='R1.30.02', maximum=10000)
+        self.assertIn('ER22', json.dumps(newer))
+        self.assertEqual(lookup.lookup(query='OCR', family='IV4-H', firmware='R1.30.02')['results'], [])
+        ocr = lookup.lookup(address='RT-IV4-R13002-OCR', maximum=10000)['record']
+        self.assertEqual(ocr['model'], 'IV4-500CA')
+        self.assertIn('confidence', json.dumps(ocr))
+        self.assertIn('7223', json.dumps(ocr))
+        ftp = lookup.lookup(address='RT-IV4-R13002-FTP', maximum=10000)['record']
+        self.assertIn('8/9', json.dumps(ftp))
+        self.assertIn('000', json.dumps(ftp))
+        self.assertTrue(ftp['limitations'])
+        with self.assertRaises(ValueError):
+            lookup.lookup(address='RT-IV4-R13002-OCR', firmware='R1.20.05')
+        with self.assertRaises(ValueError):
+            lookup.lookup(command='RT', firmware='R1.30.02')
+
+    def test_runtime_registry_identity_and_sanitized_logical_sources(self):
+        import re
+        data = json.loads((ROOT / 'skills/keyence-iv4/references/runtime-observations.json').read_text(encoding='utf-8'))
+        self.assertFalse(data['production_accepted'])
+        records = data['observations']
+        self.assertEqual(len({r['id'] for r in records}), len(records))
+        self.assertEqual({r['firmware'] for r in records}, {'R1.20.05', 'R1.30.02'})
+        for record in records:
+            self.assertEqual(record['family'], 'IV4')
+            self.assertTrue(record['observed'])
+            self.assertTrue(record['limitations'])
+            self.assertTrue(record['source_locators'])
+            for locator in record['source_locators']:
+                self.assertRegex(locator, r'^IV4_RESEARCH(?:_V2)?/(?:docs|evidence)/[^:]+$')
+                self.assertNotIn('..', locator)
+        self.assertIsNone(re.search(r'(?<![0-9])(?:[0-9]{1,3}\.){3}[0-9]{1,3}(?![0-9])', json.dumps(data).replace('2.10.01.0', 'NAVIGATOR_VERSION')))
+
     def test_actual_registry_contract_when_present(self):
         refs = ROOT / 'skills/keyence-iv4/references'
         required = [refs / name for name in ('sources.json', 'commands.json', 'capabilities.json')]

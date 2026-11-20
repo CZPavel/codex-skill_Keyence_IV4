@@ -1,4 +1,4 @@
-# Validace v1.0.0
+# Validace: historický základ v1.0.0 a aktualizace v1.1.0
 
 Provedeno 2026-11-13. Toto vydání je odborná komunitní pomůcka s přiznanými zdrojovými mezerami; není odbornou certifikací ani HW akceptací.
 
@@ -11,6 +11,14 @@ Provedeno 2026-11-13. Toto vydání je odborná komunitní pomůcka s přiznaný
 
 ## Skutečné mezery
 
-Žádná IV4 kamera ani PLC nebyly ovládány; import GSDML/EDS/L5X, fyzická polarita/timing, přesnost inspekce, restore, aktualizace firmware, souběh session, ztráty výsledků, výkon ani image correlation nebyly ověřeny. Nejednoznačné CSR/ITR/MC/BR/OPC UA source binding jsou explicitní. Podpora QR/obecného REST/úplného remote project API není doložená. Plná aktivní IO mapa a některé detailní UI/schema parametry zůstávají PARTIAL/REFERENCED_ONLY v [coverage](COVERAGE.md).
+Při původní validaci v1.0.0 nebyla IV4 kamera ani PLC ovládána; import GSDML/EDS/L5X, fyzická polarita/timing, přesnost inspekce, restore, aktualizace firmware, souběh session, ztráty výsledků, výkon ani image correlation nebyly ověřeny. Nejednoznačné CSR/ITR/MC/BR/OPC UA source binding jsou explicitní. Podpora QR/obecného REST/úplného remote project API není doložená. Plná aktivní IO mapa a některé detailní UI/schema parametry zůstávají PARTIAL/REFERENCED_ONLY v [coverage](COVERAGE.md).
 
 CI je nastavena pro Windows a Ubuntu, Python 3.11 a 3.13; skutečný aktuální výsledek je na kartě Actions pro vydaný commit. Release builder balí pouze tracked public files, ověřuje CRC, izolované rozbalení, instalaci, standalone lookup a odinstalaci. Výsledek balíku je uveden v release-metrics.json u GitHub release; tento soubor neslibuje budoucí CI běhy.
+
+## Aktualizace v1.1.0 (2026-11-20)
+
+Převzata samostatná sanitizovaná historická evidence IV4-500CA R1.20.05 / R1.30.02: TCP, OCR OK/NG, typované UA, MQTT, GUI individuální obnova a neúplný FTP příjem. Původní behavior/CLI záznamy výše zůstávají výsledkem v1.0.0, nebyly přepsány ani vydávány za nový modelový test. Viz [runtime research](../skills/keyence-iv4/references/runtime-research.md). Nová práce je offline dokumentační/lookup aktualizace bez HW připojení.
+
+Lokální aktualizace: **21 unit/integration testů PASS**, manage validate **PASS**, skill-creator quick_validate **PASS**, public audit včetně Git historie **PASS**. Nové testy pokrývají FW/family výběr, OCR/FTP kontrast, corpus research ID a nepřevzetí source katalogu. Evidence HW je převzatá z historie, nikoli z těchto testů. Viz [mapa konsolidace](CONSOLIDATION.md).
+
+Nezávislý forward-test v1.1.0 skutečně načetl skill a provedl standalone lookupy pro pět scénářů: recognized OCR text a obraz; ITR podle firmware; RFC versus úplnost archivu; nepřenášení IV4 pokusů na IV4-H; meze Fleet/restore/UTC. Všech pět bylo vyhodnoceno bez materiálního rozporu. Reviewer také spustil sedm lookup testů, všechny PASS. Toto ověřuje použitelnost publikovaných znalostí v těchto scénářích, nikoli celý klientský plugin runtime, statistický benchmark ani raw HW důkazy.

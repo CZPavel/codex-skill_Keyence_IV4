@@ -49,4 +49,4 @@ Textová chyba má ER,command,bb+CR; command část je do 18 znaků, bb dvě č�
 
 BR je přepnutí na length-aware binární odpověď: po textovém headeru následuje 24-bit BMP, jehož byty mohou obsahovat CR i čárku. BR,SD je zápis na kartu s cestou do 192 bytů a možným přepsáním. Žádná z těchto funkcí není obecný MJPEG/RTSP endpoint. Přesný mixed framing, case a délkové meze otestuj na fixture a pak na cílové kameře (IV4 p.439–440, H p.515–516).
 
-Offline testy: rozdělená a slepená TCP data, modulo counter, neplatný `--`, chybové odpovědi, hranice bufferu, explicitní odmítnutí BR v ASCII parseru. Runtime testy musí doplnit reconnect, restart, program switch, concurrent owner, takt a přiřazení image/result; dosud neprovedeny.
+Offline testy: rozdělená a slepená TCP data, modulo counter, neplatný `--`, chybové odpovědi, hranice bufferu, explicitní odmítnutí BR v ASCII parseru. [Historický runtime research](runtime-research.md) doplňuje omezený reconnect, program switch, session konflikt a BR framing pro IV4-500CA podle FW. Restart/power-cycle, produkční takt a obecné atomické přiřazení image/result zůstávají neověřené; offline parser se nerozšiřuje.

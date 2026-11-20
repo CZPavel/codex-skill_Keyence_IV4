@@ -1,5 +1,7 @@
 # Verze a aktuální oficiální doplnění
 
+Doplněk v1.1.0: [historický runtime research](runtime-research.md) odděluje pozorování IV4-500CA R1.20.05 / R1.30.02 od níže uvedených manuálových či návrhových tvrzení; nepřenášet na IV4-H.
+
 Kontrola veřejných primárních zdrojů: 2026-11-13. Nejde o tvrzení, že je tato verze aktuální navždy. Před upgradem znovu ověř přesný model, zálohu a oficiální postup.
 
 | Komponenta | Detailní release stránka | Verze / datum v detailu |

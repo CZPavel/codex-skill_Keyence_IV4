@@ -1,5 +1,7 @@
 # Praktické pracovní postupy
 
+Doplněk v1.1.0: [historický runtime research](runtime-research.md) odděluje pozorování IV4-500CA R1.20.05 / R1.30.02 od níže uvedených manuálových či návrhových tvrzení; nepřenášet na IV4-H.
+
 Tyto postupy jsou vlastní metodické zpracování GENERAL/INFERRED; dostupné konkrétní funkce vždy vybírej z modelových referencí a DOCUMENTED registrů.
 
 ## Model a kompatibilita

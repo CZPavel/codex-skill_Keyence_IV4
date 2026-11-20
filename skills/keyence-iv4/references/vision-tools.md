@@ -1,5 +1,7 @@
 # Nástroje IV4 a jejich volba
 
+Doplněk v1.1.0: [historický runtime research](runtime-research.md) odděluje pozorování IV4-500CA R1.20.05 / R1.30.02 od níže uvedených manuálových či návrhových tvrzení; nepřenášet na IV4-H.
+
 ## DOCUMENTED — rozsah a společné nastavení
 
 S-IV4 = FAST source_id `iv4_82ffe8b0fedc105a`, IV4 Series User’s Manual AS-167146 R1.30. Uvedené strany jsou PDF stránky. IV4-H R2.10 (`iv4_f2b18663143f7e12`) je samostatný produktový rozsah. [S-IV4 p.10, 106 / IV4_UserManual_WW_GB_AS_167146.pdf / Version and Tool Settings]

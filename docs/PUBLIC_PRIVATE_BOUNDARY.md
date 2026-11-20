@@ -1,6 +1,6 @@
 # Veřejná a lokální znalost
 
-Public: vlastní česká syntéza, faktické interoperability zápisy, zdrojové filename/ID/SHA/strany, oficiální URL, vlastní testy a generované anonymní příklady. Neobsahuje originální manuály, jejich úplný převod, OEM XML/EDS/L5X, modely, bitmapy, PCAP, credentials, výrobní IP ani interní runtime experimenty.
+Public: vlastní česká syntéza, faktické interoperability zápisy, zdrojové filename/ID/SHA/strany, oficiální URL, vlastní testy a generované anonymní příklady. Neobsahuje originální manuály, jejich úplný převod, OEM XML/EDS/L5X, modely, bitmapy, PCAP, credentials, výrobní IP ani raw interní runtime artefakty. V1.1.0 přidává vlastní sanitizovanou syntézu historických runtime faktů a logické archivní lokátory; bez serial/MAC/IP, místních cest, PCAP, obrazů nebo záloh.
 
 Private optional: již připravená IV4 FAST báze a její kompletní indexy/tabulky/figures/OCR. Přístup jen argumentem/environment mimo Git; žádná automatická kopie, extrakce, překlad ani publikace. Původní práva těchto materiálů nebyla ověřena pro redistribuci. Místní dostupnost není licence k veřejnému zveřejnění.
 

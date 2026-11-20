@@ -1,5 +1,7 @@
 # GPixel design proposal
 
+Doplněk v1.1.0: [historický runtime research](runtime-research.md) odděluje pozorování IV4-500CA R1.20.05 / R1.30.02 od níže uvedených manuálových či návrhových tvrzení; nepřenášet na IV4-H.
+
 Tato reference je INFERRED návrh budoucího konektoru. Žádný IV4 GPixel connector, device server ani fleet agent zde není implementován. Schopnosti zařízení vybírej z [capabilities.json](capabilities.json), příkazy z [commands.json](commands.json), nikoliv z generických názvů rozhraní tohoto návrhu.
 
 ## Oddělené cesty

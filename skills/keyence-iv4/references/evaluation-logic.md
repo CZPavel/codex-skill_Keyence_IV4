@@ -1,5 +1,7 @@
 # Vyhodnocení, logika a návaznost na PLC
 
+Doplněk v1.1.0: [historický runtime research](runtime-research.md) odděluje pozorování IV4-500CA R1.20.05 / R1.30.02 od níže uvedených manuálových či návrhových tvrzení; nepřenášet na IV4-H.
+
 ## DOCUMENTED — zdroj a logika výsledků
 
 S-IV4 = FAST source_id `iv4_82ffe8b0fedc105a`, IV4 Series User’s Manual AS-167146 R1.30. Strany jsou PDF stránky. Význam a dostupnost dalších údajů pro IV4-H, Navigator a komunikační jednotku se řídí jejich verzí a vlastním manuálem. [S-IV4 p.10 / IV4_UserManual_WW_GB_AS_167146.pdf / Version]

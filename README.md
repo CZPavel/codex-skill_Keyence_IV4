@@ -1,8 +1,8 @@
 # KEYENCE IV4 / IV4-H skill pro Codex
 
-Komunitní technický skill `keyence-iv4` **v1.0.0** pro IV4, IV4-H a IV Smart Navigator (IV-H1SN). Není oficiálním produktem KEYENCE a není podporován ani schválen výrobcem.
+Komunitní technický skill `keyence-iv4` **v1.1.0** pro IV4, IV4-H a IV Smart Navigator (IV-H1SN). Není oficiálním produktem KEYENCE a není podporován ani schválen výrobcem.
 
-Obsahuje vlastní české odborné reference s anglickými technickými názvy, 89 modelově rozlišených příkazových řádků (43 IV4 + 46 IV4-H), 28 capability položek, metadata 15 PDF a 13 otevřených oficiálních webových zdrojů. PLC registr naviguje tři GSDML edice/33 modulů a jednu EDS identitu; původní OEM soubory nejsou přibaleny. Úplný rozsah a mezery: [coverage](docs/COVERAGE.md).
+Obsahuje vlastní české odborné reference s anglickými technickými názvy, 89 modelově rozlišených příkazových řádků (43 IV4 + 46 IV4-H), 28 capability položek, metadata 15 PDF a 13 otevřených oficiálních webových zdrojů. PLC registr naviguje tři GSDML edice/33 modulů a jednu EDS identitu; původní OEM soubory nejsou přibaleny. Úplný rozsah a mezery: [coverage](docs/COVERAGE.md), [mapa konsolidace V1/V2](docs/CONSOLIDATION.md).
 
 ## Instalace a aktualizace — Windows / PowerShell
 
@@ -26,7 +26,7 @@ python -X utf8 tools/manage.py uninstall
 
 Uninstall odstraní pouze ověřenou spravovanou nezměněnou kopii. Pro izolovanou instalaci předej `--skills-dir <testovací-adresář-skills>`; nevytvářej druhou souběžnou kopii do jiného uživatelského kořene. Ruční instalace v jiném Agent Skills hostu: přenes samostatný adresář `skills/keyence-iv4` podle jeho podporované konfigurace. Neměň verzi firmware jen kvůli instalaci skillu.
 
-Release ZIP obsahuje stejnou strukturu jako checkout, včetně správy a testů. Po rozbalení použij tytéž příkazy z kořene balíku. [Release v1.0.0](https://github.com/CZPavel/codex-skill_Keyence_IV4/releases/tag/v1.0.0).
+Release ZIP obsahuje stejnou strukturu jako checkout, včetně správy a testů. Po rozbalení použij tytéž příkazy z kořene balíku. Historické vydání: [Release v1.0.0](https://github.com/CZPavel/codex-skill_Keyence_IV4/releases/tag/v1.0.0).
 
 ## Samostatné použití a volitelná lokální evidence
 
@@ -35,6 +35,8 @@ Po instalaci spusť z adresáře skillu:
 ```powershell
 python scripts/lookup.py --status
 python scripts/lookup.py --query "AI OCR" --limit 3
+python scripts/lookup.py --query OCR --firmware R1.30.02 --limit 3
+python scripts/lookup.py --id RT-IV4-R13002-OCR --max-chars 5000
 python scripts/lookup.py --command CSR --family IV4-H --max-chars 5000
 python scripts/lookup.py --id S-IV4-H
 python scripts/lookup.py --descriptor DAP5 --limit 3
@@ -71,7 +73,7 @@ python -X utf8 tools/manage.py validate
 python -X utf8 tools/public_audit.py
 ```
 
-[VALIDATION.md](docs/VALIDATION.md) odděluje programové testy, nezávislé modelové odpovědi, omezený Codex CLI explicit-context smoke a neprovedené HW kroky. [Source verification](docs/source-verification.json) dokumentuje vzorkovou kontrolu faktů a všech 89 request forem. Nejde o kalibraci ani odbornou certifikaci všech vět/diagramů. Žádná fyzická IV4 kamera, PLC import, produkční takt, restore ani firmware update nebyly testovány.
+[VALIDATION.md](docs/VALIDATION.md) odděluje programové testy, nezávislé modelové odpovědi, omezený Codex CLI explicit-context smoke a neprovedené HW kroky. [Source verification](docs/source-verification.json) dokumentuje vzorkovou kontrolu faktů a všech 89 request forem. Nejde o kalibraci ani odbornou certifikaci všech vět/diagramů. V1.1.0 přidává [sanitizovanou historickou runtime syntézu](skills/keyence-iv4/references/runtime-research.md) a strojový registr pro IV4-500CA R1.20.05 / R1.30.02. Jde o uložené omezené HW pokusy, včetně individuální GUI obnovy; nové připojení, IV4-H, PLC import, plná obnova a produkční přejímka nejsou tímto ověřeny.
 
 Důležité otevřené body: CSR délka/typ H, ITR trailing comma, MC a BR case/source typo; OPC UA duplicate method ID; exact binary image framing a korelace; vybrané aktivní PLC moduly; reconnect, souběh, ztráty/retained MQTT a výkon. Před produkčním klientem proveď konkrétní zdrojovou a bench validaci. [GPixel experimenty](skills/keyence-iv4/references/gpixel.md).
 
